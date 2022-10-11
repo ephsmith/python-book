@@ -10,9 +10,14 @@ nav:
 markdown_extensions:
   - toc:
       permalink: True
+  - pymdownx.highlight
+  - pymdownx.superfences
 
 plugins:
   - tooltips
 
 extra_css:
   - css/hint.min.css
+
+theme:
+  name: material
