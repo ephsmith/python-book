@@ -1,17 +1,14 @@
-# Welcome to MkDocs
+# Welcome
+Welcome to the course text. This textbook will serve as a reference
+for the course.
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Notable Features
 
-## Commands
+* Simple navigation
+* Search
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Use the site navigation bar to navigate to a specific chapter. Use the
+search feature to find a specific topic.
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Start Reading
+The best place to start is [Chapter 01](chapter-01.md).
