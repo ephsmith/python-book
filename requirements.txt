@@ -1,0 +1,2 @@
+mkdocs==1.4.0
+mkdocs-tooltips==0.1.0

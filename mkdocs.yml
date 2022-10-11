@@ -6,3 +6,13 @@ nav:
       - 'Chapter 01': 'chapter-01.md'
       - 'Chapter 02': 'chapter-02.md'
     - About: about.md
+
+markdown_extensions:
+  - toc:
+      permalink: True
+
+plugins:
+  - tooltips
+
+extra_css:
+  - css/hint.min.css
