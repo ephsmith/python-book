@@ -15,6 +15,8 @@ nav:
       - 'Chapter 02': 'chapter-02.md'
     - About: about.md
 
+
+
 markdown_extensions:
   - pymdownx.critic
   - pymdownx.caret
@@ -47,7 +49,6 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
 
-
 extra_css:
   - css/hint.min.css
 
@@ -56,6 +57,8 @@ theme:
   features:
     - header.autohide
     - content.code.annotate
+    - navigation.tracking
+    - navigation.top
   palette:
     # Palette toggle for light mode
     - scheme: default
