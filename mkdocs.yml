@@ -2,6 +2,7 @@ site_name: Introductory Python
 site_url: https://ephsmith.github.io/python-book/
 repo_url: https://github.com/ephsmith/python-book
 repo_name: ephsmith/python-book
+edit_uri: edit/main/docs/
 copyright: Copyright &copy; 2022 Forrest Smith
 
 
@@ -53,6 +54,8 @@ extra_css:
   - css/hint.min.css
 
 theme:
+  icon:
+    repo: simple/github
   name: material
   features:
     - header.autohide
