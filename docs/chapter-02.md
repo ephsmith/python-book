@@ -6,9 +6,12 @@ Test.
 
 ```python
 nums = [1, 2, 3, 4]
-for num in nums:
+for num in nums:  # (1)
     print(num)
 ```
+
+1. Python `for` loops use membership expressions to loop over items in a sequence.
+
 
 ## The Editor Window
 Here is a screenshot. How horrible does this look?

@@ -1,5 +1,13 @@
 site_name: Introductory Python
 site_url: https://ephsmith.github.io/python-book/
+repo_url: https://github.com/ephsmith/python-book
+repo_name: ephsmith/python-book
+copyright: Copyright &copy; 2022 Forrest Smith
+
+
+extra:
+  generator: false
+
 nav:
     - Home: index.md
     - Book:
@@ -8,16 +16,59 @@ nav:
     - About: about.md
 
 markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - tables
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - footnotes
+  - admonition
+  - pymdownx.details
   - toc:
       permalink: True
   - pymdownx.highlight
-  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
 
 plugins:
   - tooltips
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+
 
 extra_css:
   - css/hint.min.css
 
 theme:
   name: material
+  features:
+    - header.autohide
+    - content.code.annotate
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+      primary: cyan
+      accent: amber
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+      primary: cyan
+      accent: amber
