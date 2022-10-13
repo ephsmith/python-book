@@ -12,8 +12,8 @@ extra:
 nav:
     - Home: index.md
     - Book:
-      - 'Chapter 01': 'chapter-01.md'
-      - 'Chapter 02': 'chapter-02.md'
+      - '1. Why Python?': 'chapter-01.md'
+      - '2. Quick Overview of Python': 'chapter-02.md'
     - About: about.md
 
 
