@@ -11,10 +11,11 @@ extra:
 
 nav:
     - Home: index.md
+    - About: about.md
     - Book:
       - '1. Why Python?': 'chapter-01.md'
       - '2. Setting up Python': 'chapter-02.md'
-    - About: about.md
+
 
 
 
