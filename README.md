@@ -1,5 +1,5 @@
 [![pages-build-deployment](https://github.com/ephsmith/python-book/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ephsmith/python-book/actions/workflows/pages/pages-build-deployment)
-[![Python 3.8+](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
 # Purpose
 This repository houses an introductory Python reference text for courses that I currently instruct. The textbook was started in October 2022 as a support document and will continue to be updated.
 
