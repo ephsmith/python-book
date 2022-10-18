@@ -293,11 +293,22 @@ Thoughts on VS Code:
 - VS Code is freely available and runs on most platforms.
 
 ### Pycharm
-[Pycharm](https://www.jetbrains.com/pycharm-edu/) is a JetBrains.  The
+[Pycharm](https://www.jetbrains.com/pycharm-edu/) is a JetBrains product.  The
 education version is free, but you will need to verify student
 status--the process is simple and worth it. Visit the [RealPython
 article](https://realpython.com/pycharm-guide/) on using PyCharm for
 development.
+
+!!! note
+    PyCharm is a highly recommended IDE. Give it a try once you have
+    some minimal experience programming Python with IDLE.
+
+    PyCharm educational licenses are quite easy to obtain. Be sure to 
+    get the educational version (not the community edition). 
+    PyCharm integrates
+    well with all Python environments and GitHub.  It also supports
+    notebooks.  All of this comes with very minimal configuration compared
+    to Jupyter and VS Code. 
 
 Thoughts on PyCharm:
 
