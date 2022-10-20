@@ -140,3 +140,93 @@ corrections. Hopefully you tried out the additional syntax error examples.  It
 is good to see these now, when you are not focused on another problem. 
 
 ### Runtime Errors
+Runtime errors are another type of error that you will encounter as you develop 
+software. As the name implies, runtime errors occur when your program is run--at 
+execution time. The majority of runtime errors are raised by the Python interpreter 
+in response to a broad scope of potential problems.  The list below highlights a few 
+of the sources of runtime errors:
+
+- logic errors included in the code itself
+- user errors:  incorrect values to types fed to program via web or text interface
+- timeouts or connection errors when one program is communicating with another 
+  (querying a web API with Python for example).
+
+For most newcomers to the language, logic errors are the most common source of runtime 
+errors.  Logic errors are a broad range of errors that we introduce into our program.  
+For every type and feature of the language, there are a different set of logic errors 
+we could introduce.  Here, we explore some common runtime errors experienced by new 
+Python developers.
+
+#### Name Errors
+A `NameError` is raised by the interpreter when our program attempts to access a name 
+that has not been defined.  A classic example of this occurs when we mistype a 
+variable or function name. Python is a case-sensitive language so the names 'Hello' 
+and 'hello' are different. Enter the following program into an editor window in IDLE 
+and run it to explore how the Python interpreter handles such an error. 
+
+```python title="errors.py"
+def hello(name):
+    """Prints 'Hello <name>' where name=<name>"""
+    print(f'Hello {name}')
+
+
+if __name__ == '__main__':
+    Hello('Mom')  #  (1)!
+```
+
+1. This is the source of the error.  `Hello` is not the same as `hello` *and* `Hello` 
+   is not defined anywhere in the module.
+
+When you run `errors.py`, the following error is displayed by the interpreter in the 
+[Python shell](02-setting-up-python.md#introducing-the-python-shell). 
+
+```python
+>>>
+Traceback (most recent call last):  #  (1)!
+  File "/Users/forrest/tmp/errors.py", line 7, in <module>  # (2)!
+    Hello('Mom')
+NameError: name 'Hello' is not defined. Did you mean: 'hello'?  #  (3)!
+>>>
+```
+1. Traceback is the first line you'll see in a simple traceback such as this. A 
+   traceback traces a runtime error back to its source. 
+2. There are often many such lines in a traceback.  This provides the ability to trace 
+   the entire path of calls that produced the error.
+3. This line names the error that was raise (here a `NameError`). Beginning with 
+   Python 3.10, helpful hints are also printed on this line.
+
+
+IDLE's Python shell provides a way for you to go straight from the error to the file 
+and line that produced it. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
