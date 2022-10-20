@@ -72,6 +72,16 @@ annotate the error with a red squiggle line along with a hover tooltip.
 <figcaption>PyCharm annotates syntax errors as we edit.</figcaption>
 </figure>
 
+#### Syntax Errors are Caught By a Linter
+Syntax errors are typically caught by a linter or similar program which inspects the 
+code prior to the text being sent to the Python interpreter for execution. Many IDEs 
+provide a way to customize the linter and even add additional linters to further 
+inform the user as to potential syntax, style, or even logic errors prior to code 
+execution. PyCharm for example provides a wealth of feedback including style error 
+hints, syntax warnings, spell-checking and more--all of which are presented to the 
+developer as they edit code. 
+
+
 #### More Syntax Error Examples
 The following Python program will be used to demonstrate more examples of syntax 
 errors. Using IDLE, add copy and paste this code into a new editor window and save the 
