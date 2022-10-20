@@ -138,7 +138,9 @@ your code. These checks consist of:
     guide adopted for the course.  
 
 You can view the output of these tests via the GitHub classroom interface or within 
-GitHub itself. Check out the documentation on [viewing auto-grading output](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results).
+GitHub itself. If any checks fail, the log will help you determine the necessary fixes. 
+
+Check out the documentation on [viewing auto-grading output](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results).
 
 !!! note
     The same checks that are run when you push to GitHub can be run locally. To 
