@@ -132,11 +132,20 @@ you are doing.  Each time you push changes to GitHub, a CI pipeline runs checks 
 your code. These checks consist of:
 
 - unit tests (written for [pytest](https://docs.pytest.org/en/6.2.x/contents.html))
+  - these assure that your solutions meet the requirements and are used for autograding. 
 - style checks (via [pytest-flake8](https://github.com/tholo/pytest-flake8))
+  - style checks assure that your code style adheres to the subset of the [PEP8](https://peps.python.org/pep-0008/) style 
+    guide adopted for the course.  
 
 You can view the output of these tests via the GitHub classroom interface or within 
 GitHub itself. Check out the documentation on [viewing auto-grading output](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results).
 
+!!! note
+    The same checks that are run when you push to GitHub can be run locally. To 
+    accomplish this, pytest will need to be installed locally as well.  The easiest 
+    way to assure that you have the appropriate tools in place to test is to install 
+    the requirements listed in the `requirements.txt` file located in you repo. This 
+    is the topic of another article.   
 
 
 
