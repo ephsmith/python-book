@@ -17,6 +17,8 @@ nav:
       - '2. First Steps with Python':
          - 'Setting up Python': '02-setting-up-python.md'
          - 'Editing and Running Modules': '02-programming-basics.md'
+    - 'Reference Guides':
+      - 'GitHub': 'guides/github-references.md'
 
 
 
