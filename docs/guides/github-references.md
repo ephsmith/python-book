@@ -38,7 +38,10 @@ git application watches for changes. Git provides:
 GitHub provides access to all of this functionality via the 
 [GitHub Desktop App](https://desktop.github.com)
 
+<figure markdown>
 ![GitHub Desktop in Action](../img/r-github-desktop-in-action.png)
+<figcaption>GitHub Desktop: Viewing file differences.</figcaption>
+</figure>
 
 !!! info
     Visit the GitHub guide to [Getting Started with GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop)
@@ -72,3 +75,44 @@ invitation link. The steps involved in accepting a link are as follows:
     ![Repo Ready](../img/r-github-repo-ready.png){width="300"}
     <figcaption>Repository Ready... click the link.</figcaption>
     </figure>
+   
+## Working on the Assignment
+### Read the README.md
+In order to begin working on the assignment, you'll first want to review the `README.
+md` that you are greeted by when you first visit your repository. This will be present 
+for every assignment and it provides detailed instructions and assignment requirements.
+
+<figure markdown>
+![Viewing the README](../img/r-github-viewing-the-readme.png){width="300"}
+<figcaption>Viewing the README</figcaption>
+</figure>
+
+### Clone your Repository
+While it is possible to edit files using the GitHub web application, this is *not* a 
+good idea for Python development.  The web editor does *not* have access to a shell 
+for testing and it does not come with a debugger. 
+
+The standard approach is to *clone* your repository. Cloning takes care of three 
+essential tasks:
+
+- copying the repository assets: source code, data files, tests, etc. 
+- copying the git configuration (necessary for git to work with your repo)
+- copying the repository history (necessary for tracking and updating)
+
+Cloning can be accomplished by several methods:
+
+- using GitHub desktop (recommended)
+- using the command line (terminal) which requires that you have [Git for 
+  Windows](https://git-scm.com/download/win) or if you are on macOS, [macOS XCode 
+  command-line utilities](https://developer.apple.com/xcode/resources/). 
+- using and IDE. PyCharm can directly open your GitHub repository for example.
+
+!!! tip "Recommendation"
+    Cloning your repo via GitHub Desktop is highly recommended when starting out. 
+    Check out the GitHub [documentation on cloning](https://developer.apple.com/xcode/resources/).  
+
+### Commit Local Changes, Push to Submit to GitHub
+
+
+
+
