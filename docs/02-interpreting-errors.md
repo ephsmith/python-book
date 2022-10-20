@@ -107,8 +107,9 @@ if __name__ == '__main__': #  (5)!
    (Run-Run Module in IDLE). This is a call to the `hello()` function defined previously.
 
 Here are some errors to introduce on your own to explore the various types of errors 
-one can encounter. In each case, introduce the error, run the module, inspect the 
-error dialog, and then correct the error.  
+one can encounter. In each case, introduce the error, [run the module](02-setting-up-python.md#edit-and-run-a-python-module), inspect the error dialog, and 
+then 
+correct the error.  
 
 !!! tip
     Configure IDLE to display line numbers: On the toolbar select "Options -> Show Line 
