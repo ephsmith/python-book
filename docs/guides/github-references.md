@@ -112,6 +112,42 @@ Cloning can be accomplished by several methods:
     Check out the GitHub [documentation on cloning](https://developer.apple.com/xcode/resources/).  
 
 ### Commit Local Changes, Push to Submit to GitHub
+When you make progress on your assignment, it is best to commit those changes. When 
+you do this, you create a snapshot that can be restored if necessary. Once you have 
+reached a milestone or completed your assignment it is time to push those changes to 
+GitHub. 
+
+!!! danger 
+    You are encouraged to work only on the `main` branch for assignments in this 
+    course. Assignment submissions must be committed to and pushed to the `main` branch. 
+
+Reference the GitHub instructions on committing and pushing.
+
+- [GitHub Reference: committing](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project)
+- [GitHub Reference: pushing](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/pushing-changes-to-github)
+
+### Viewing Auto-grading Results
+When you make significant progress on your assignment, you'll likely want to know how 
+you are doing.  Each time you push changes to GitHub, a CI pipeline runs checks on 
+your code. These checks consist of:
+
+- unit tests (written for [pytest](https://docs.pytest.org/en/6.2.x/contents.html))
+- style checks (via [pytest-flake8](https://github.com/tholo/pytest-flake8))
+
+You can view the output of these tests via the GitHub classroom interface or within 
+GitHub itself. Check out the documentation on [viewing auto-grading output](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results).
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
