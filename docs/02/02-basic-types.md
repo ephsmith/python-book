@@ -168,9 +168,82 @@ What happens to a dream deferred?
       Or does it explode?
 ```
 
-If we want to preserve the spacing when we include this in a program
+Surrounding such a block of text with triple double or triple single quotes will 
+preserve all whitespace (tabs, spaces, newlines). Try adding the following code block 
+to `string_examples.py` and running it to see this technique in action. 
 
+```python title="string_examples.py"
+harlem = \
+"""What happens to a dream deferred?
 
+      Does it dry up
+      like a raisin in the sun?
+      Or fester like a sore—
+      And then run?
+      Does it stink like rotten meat?
+      Or crust and sugar over—
+      like a syrupy sweet?
+
+      Maybe it just sags
+      like a heavy load.
+
+      Or does it explode?
+"""
+
+print(harlem)
+```
+
+#### Triple-quoted Strings: Potential issues
+The whitespace preservation of triple-quoted strings is both a benefit and a 
+problem--depending on the situation.  Consider the situation illustrated below.  The 
+`harlem` variable from the previous section is now included in a function--note the 
+additional indentation.  The triple-quote's whitespace preservation keeps the 
+additional indentation spaces in addition to the space in the original text. Note the 
+result when you run this code.
+
+```python title="string_examples.py"
+def print_poem():
+    harlem = \
+    """What happens to a dream deferred?
+
+          Does it dry up
+          like a raisin in the sun?
+          Or fester like a sore—
+          And then run?
+          Does it stink like rotten meat?
+          Or crust and sugar over—
+          like a syrupy sweet?
+
+          Maybe it just sags
+          like a heavy load.
+
+          Or does it explode?
+    """
+    print(harlem)
+
+if __name__ == '__main__':
+    print_poem()
+```
+
+Here's the output.  Do you notice the additional spaces?  Keep this in mind as a 
+potential hazard to look out for. 
+
+```
+What happens to a dream deferred?
+
+          Does it dry up
+          like a raisin in the sun?
+          Or fester like a sore—
+          And then run?
+          Does it stink like rotten meat?
+          Or crust and sugar over—
+          like a syrupy sweet?
+
+          Maybe it just sags
+          like a heavy load.
+
+          Or does it explode?
+```
 
 
 
