@@ -44,7 +44,7 @@ When we enter this code in IDLE, we receive no indication of an error.  When we 
 the module, however, IDLE displays an error dialog.
 
 <figure markdown>
-![Syntax Error](img/01-errors-syntax-basic.png#light-only){width="500"}
+![Syntax Error](img/02-errors-syntax-basic.png#light-only){width="500"}
 <figcaption>IDLE presents an error dialog for syntax errors.</figcaption>
 </figure>
 
@@ -53,7 +53,7 @@ window.Note that the location of the highlight is not *exact*, but it does provi
 enough context to make the correction. 
 
 <figure markdown>
-![Syntax Error](img/01-errors-syntax-basic-highlighted.png#light-only){width="500"}
+![Syntax Error](img/02-errors-syntax-basic-highlighted.png#light-only){width="500"}
 <figcaption>IDLE highlights the location of syntax errors.</figcaption>
 </figure>
 
@@ -68,7 +68,7 @@ such errors.  If we delete the closing paren while editing further, PyCharm will
 annotate the error with a red squiggle line along with a hover tooltip. 
 
 <figure markdown>
-![PyCharm annotates](img/01-errors-syntax-basic-pycharm.png){width="500"}
+![PyCharm annotates](img/02-errors-syntax-basic-pycharm.png){width="500"}
 <figcaption>PyCharm annotates syntax errors as we edit.</figcaption>
 </figure>
 
@@ -203,7 +203,7 @@ the line in the traceback.  Again, there are often multiple references to source
 in a given traceback, so this will definitely come in handy. 
 
 <figure markdown>
-![Goto File/Line](img/01-errors-runtime-nam-error-goto-line.png){width="500"}
+![Goto File/Line](img/02-errors-runtime-name-error-goto-line.png){width="500"}
 <figcaption>Right-Click on a file or line number in a traceback.</figcaption>
 </figure>
 
