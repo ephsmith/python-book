@@ -196,7 +196,6 @@ NameError: name 'Hello' is not defined. Did you mean: 'hello'?  #  (3)!
 3. This line names the error that was raise (here a `NameError`). Beginning with 
    Python 3.10, helpful hints are also printed on this line.
 
-
 IDLE's Python shell provides a way for you to go straight from the error to the file 
 and line that produced it. Right click on a line with a line number in the traceback 
 and select "Goto File/Line".  This will take you directly to the location related to 
@@ -207,6 +206,55 @@ in a given traceback, so this will definitely come in handy.
 ![Goto File/Line](img/01-errors-runtime-nam-error-goto-line.png){width="500"}
 <figcaption>Right-Click on a file or line number in a traceback.</figcaption>
 </figure>
+
+#### TypeError
+Type errors arise when an operation is applied to an object of the wrong type. A 
+classic example is the following:
+
+```python
+>>> "10" + 5
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    "10" + 5
+TypeError: can only concatenate str (not "int") to str # (1)!
+```
+
+1. Here's a `TypeError` in the wild. Translated, this means we must either convert 
+   `"10"` to `10` or `5` to `"5"`--depending the desired result.
+
+Type errors are common throughout all levels of Python development.  Common examples 
+include: 
+
+* calling a function with the wrong order or type of arguments.
+* arithmetic operations on mixed and incompatible types
+
+#### ValueError
+If you attempt to pass a negative value to a function that expects only positive 
+values, a value error will be raised.  Classic examples that result in the raise of a 
+`ValueError` are usually associated with the `math` library which is part of the 
+Python standard library. Here are a couple of examples:
+
+```python
+>>> import math
+>>> math.sqrt(-42)  #  (1)!
+Traceback (most recent call last):
+  File "<pyshell#3>", line 1, in <module>
+    math.sqrt(-42)
+ValueError: math domain error  #  (2)!
+>>> math.log(-10)
+raceback (most recent call last):
+  File "<pyshell#5>", line 1, in <module>
+    math.log(-10)  # (3)!
+ValueError: math domain error  #  (4)!
+```
+
+1. In pure math, this would result in a complex number. Python's `cmath` library can 
+   handle such values, but not the `math` library.
+2. Here's that `ValueError`.  `math.sqrt` only handles positive values. 
+3. Again, this would result in a complex number (or undefined in some contexts) and the 
+   `math` lib does not handle such types.
+4. The `ValueError` here is again related to a domain error. `math.log()` handles only 
+   positive valued inputs.
 
 #### Other Errors
 Many of the errors listed below deserve a bit more context than is given at this stage 
@@ -223,6 +271,84 @@ highlights some of the most common runtime errors experienced.
 |`ValueError` | Raised when a operation for function receives the correct type but incorrect value.
 |`ZeroDivisionError`|Raised when an operation results in a division by zero|
 
+#### More Complicated Tracebacks
+Many of the tracebacks that you encounter will reference multiple lines of code. It 
+can take a bit of practice to get used to interpreting such errors. A simple example 
+will help illustrate.
+
+```python
+def hello(name):  #  (1)!
+    """Prints 'Hello name'"""
+    print(f'Hello {name}')
+
+
+def decorate(name):  #  (2)!
+    """Decorates a name with + signs"""
+    return '++' + name + '++'
+
+
+def decorative_hello(name):  # (3)
+    """Prints 'Hello ++name++'."""
+    decorated = decorate(name)
+    hello(decorated)
+
+
+if __name__ == '__main__':
+    hello('Mom')  # (4)!
+    decorative_hello(5)  # (5)!
+
+```
+
+1. We've seen this function in a previous example. For a call `hello('Mom')` this 
+   prints `Hello Mom`.
+2. This function returns a string with `++` on either side of it.  To accomplish this 
+   is uses the `+` operator to put the strings together an operation called concatenation.
+3. `decorative_hello()` uses the other two functions (`hello()` and `decorate()`) to 
+   print a decorated name. 
+4. This call will not produce an error. 
+5. If you refer back to the `TypeError` section, it may help you understand why this 
+   line throws an error. 
+
+When we run the code above from IDLE, the following traceback is produced. At first 
+glance we can already see that there is a bit more to digest in this error message im 
+comparison to the others demonstrated on this page. The key to quickly resolving the 
+source of the error is to start reading in the right place. The first line in the 
+traceback provides a hint. 
+
+The best way to read tracebacks is by starting at the bottom and working up--if needed.
+The last line of source code referenced in a traceback is where the error occurred. 
+This doesn't mean that this is the source of the problem. In the case of our example, 
+the source of the problem is at the very top of the program, but we gain insight into 
+*why* the error occurred by looking at *where* the error occurred.
+
+In the case of this example, the first and last lines of code listed in the traceback 
+are all we need to determine the fix. 
+
+Start from the bottom of annotation on the traceback and click through each 
+description for more information.
+```python
+Traceback (most recent call last):
+  File "/Users/forrest/tmp/errors.py", line 19, in <module>
+    decorative_hello(5)  #  (4)!
+  File "/Users/forrest/tmp/errors.py", line 13, in decorative_hello
+    decorated = decorate(name)  #  (3)!
+  File "/Users/forrest/tmp/errors.py", line 8, in decorate 
+    return '++' + name + '++'  #  (2)!
+TypeError: can only concatenate str (not "int") to str  # (1)!
+```
+
+1. This is the error type--a `TypeError`.  This lets us know that an operation was 
+   performed on the incorrect type.  In the lines above, we look for arithmetic 
+   operations and function calls.
+2. This is the operation that raised the `TypeError`. Here we have a string type `++`
+   concatenated with the variable `name`. The result of that operation would then be 
+   added to the last string type `++` except the error was raised. 
+3. This is is `decorative_hello()` calling `decorate()` to concatenate the `name` 
+   variable with `++`.  
+4. This is the true source of the error.  `decorative_hello()` calls `decorate()` 
+   which is the function where the error occurred. `decorate()` contains operations on 
+   strings but is ultimately called with a number which is why the error is raised.
+ 
 
 
 
