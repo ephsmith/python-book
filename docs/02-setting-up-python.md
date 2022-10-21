@@ -64,7 +64,7 @@ viewing the result.
 
 
 <figure markdown>
-  ![Python Shell](img/ch-02-python-shell.gif){ width="500" }
+  ![Python Shell](img/02-python-shell.gif){ width="500" }
   <figcaption>Python Shell / IDLE Interactive Window</figcaption>
 </figure>
 
@@ -132,7 +132,7 @@ expressions use the following operators.
 When you enter one of these expression at the Python shell prompt the
 result will be printed below the prompt.
 
-![Python as a calculator](img/ch-02-shell-calculator.png)
+![Python as a calculator](img/02-shell-calculator.png)
 
 ### Add Some Variables
 Variables are names (symbols) that refer to a value. In order to use a
