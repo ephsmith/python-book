@@ -109,13 +109,49 @@ You have now created and tested string variables in Python. We will dive deeper 
 strings in the next chapters.  Next, we cover numeric variables. 
 
 ## Numeric Types
-Python has three built-in atomic numeric types:
+Python has three built-in atomic numeric types.  This text focuses on `int` and 
+`float` types. 
 
-|Type     | Description      | Examples|
+|Type     | Description      | Literal Examples|
 |---------|------------------|---------|
 |`int`    | Integer type     |`1`, `-200`, `7_654_321`|
 |`float`  | Float type       |`1.11`, `-200.0`, `1_234_567.8`|
 |`complex`| Complex type     |`1 + 1j`, `2.2 + 5j`|
+
+### Numeric Literals and Variables
+Just as with `str` types, we need to be aware of how to enter literal values for 
+numeric types. The table above provides examples literals for each numeric type. 
+Creating a variable from any of these types is accomplished the same way as with 
+strings.  We use the assignment operator `=`.  The following code assigns some numeric 
+literals to names.  When you run this code in IDLE, you can run type checks on the 
+variables using the Python shell.
+
+```py title="numeric_examples.py"
+product_count = 1000
+product_weight = 22.3
+```
+
+### Type Checks on Numeric Types
+The Python shell session excerpt below demonstrates type checks on numeric types.  The 
+pattern is the same regardless of the type.  We just supply the correct arguments to 
+the `type()` and `isinstance()` functions.
+
+```py
+>>> type(product_count)
+int
+>>> type(product_weight)
+float
+>>> isinstance(product_count, int)
+True
+>>> isinstance(product_weight, float)
+True
+```
+
+We will explore methods and operations with numeric types in the coming chapters. For 
+now, we continue our survey of basic Python types with the Boolean type `bool`.
+
+## Boolean Type: `bool`
+
 
 
 
