@@ -188,6 +188,7 @@ Traceback (most recent call last):  #  (1)!
 NameError: name 'Hello' is not defined. Did you mean: 'hello'?  #  (3)!
 >>>
 ```
+
 1. Traceback is the first line you'll see in a simple traceback such as this. A 
    traceback traces a runtime error back to its source. 
 2. There are often many such lines in a traceback.  This provides the ability to trace 
@@ -197,10 +198,30 @@ NameError: name 'Hello' is not defined. Did you mean: 'hello'?  #  (3)!
 
 
 IDLE's Python shell provides a way for you to go straight from the error to the file 
-and line that produced it. 
+and line that produced it. Right click on a line with a line number in the traceback 
+and select "Goto File/Line".  This will take you directly to the location related to 
+the line in the traceback.  Again, there are often multiple references to source code 
+in a given traceback, so this will definitely come in handy. 
 
+<figure markdown>
+![Goto File/Line](img/01-errors-runtime-nam-error-goto-line.png){width="500"}
+<figcaption>Right-Click on a file or line number in a traceback.</figcaption>
+</figure>
 
+#### Other Errors
+Many of the errors listed below deserve a bit more context than is given at this stage 
+of the book. If some of them don't make sense now, don't worry.  Specific error types 
+will be covered in more detail once a related topic is introduced. The list below 
+highlights some of the most common runtime errors experienced.
 
+|Error Class| Reason|
+|-----------| ------|
+|`ImportError`| There was an issue loading a module with the `import` statement|
+|`IndexError` | Raised when a sequence subscript is out of range.|
+|`KeyError`   | Raised when a dictionary key is not found|
+|`TypeError`  | Raised when an operation is applied to the incorrect data type|
+|`ValueError` | Raised when a operation for function receives the correct type but incorrect value.
+|`ZeroDivisionError`|Raised when an operation results in a division by zero|
 
 
 
