@@ -40,7 +40,7 @@ You can read more about Python licenses on the [History and
 License](https://docs.python.org/3/license.html) page of the official
 Python site.
 
-## Python runs on all major architecutres
+## Python runs on all major Architectures
 [Official Python installation packages](https://www.python.org/downloads/release/python-3108/) are available for X86, ARM, and
 Apple M-series architecures for both Windows and macOS. Linux and UNIX packages
 are made available by package maintainers via the source releases made
