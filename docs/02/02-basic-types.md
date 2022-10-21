@@ -105,6 +105,17 @@ str
 True
 ```
 
+You have now created and tested string variables in Python. We will dive deeper into 
+strings in the next chapters.  Next, we cover numeric variables. 
+
+## Numeric Types
+Python has three built-in atomic numeric types:
+
+|Type     | Description      | Examples|
+|---------|------------------|---------|
+|`int`    | Integer type     |`1`, `-200`, `7_654_321`|
+|`float`  | Float type       |`1.11`, `-200.0`, `1_234_567.8`|
+|`complex`| Complex type     |`1 + 1j`, `2.2 + 5j`|
 
 
 
