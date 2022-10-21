@@ -16,7 +16,7 @@ nav:
       - '1. Why Python?': '01/01-why-python.md'
       - '2. First Steps with Python':
          - 'Setting up Python': '02/02-setting-up-python.md'
-         - 'Handling Errors': '02/02-interpreting-errors.md'
+         - 'Handling Errors': '02/02-handling-errors.md'
     - 'References and Guides':
       - 'GitHub': 'guides/github-references.md'
       - 'Rules and Conventions for Names': 'guides/python-naming-rules-conventions.md'
