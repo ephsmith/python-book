@@ -22,7 +22,7 @@ Python has the following bult-in atomic types:
 - Sets: `set`, `frozenset`
 - Binary Types: `bytes`, `bytearray`
 
-## Determining the Type of a Variable
+## Determining a Variable's Type
 There are two common methods to determine the type of a variable.  When using the 
 interactive Python shell, the `type()` function is the quickest way to check the type 
 of a variable or a value returned from a function/operation.
@@ -66,7 +66,7 @@ Many other languages have multiple text types. In C++, for example, strings are
 non-atomic compositions of an atomic character type. This is not the case in Python.  
 The only text type in Python is the `str` type. 
 
-### `str` literals
+### `str` Literals
 A **literal** is an actual value of a certain type that is included in our code. 
 String literals are entered as characters, surrounded by (delimited with) single or 
 double quotes.
@@ -74,10 +74,13 @@ double quotes.
 The following simple program includes some string literal examples.
 
 ```python title="string_examples.py"
-country_code = 'CA'
-product_code = "EZ123"
+country_code = 'CA' #  (1)!
+product_code = "EZ123"  # (2)!
 print(country_code, product_code)
 ```
+
+1. `CA` is a string literal.
+2. `EZ123` is also a string literal.
 
 When we run this program, the following is printed to the screen.
 
@@ -86,6 +89,21 @@ When we run this program, the following is printed to the screen.
 CA EZ123
 ```
 
+### `str` Variables
+To create a string variable, assign a string literal to a name using the assignment 
+operator `=`.  In the program above, `country_code` and `product_code` are both string 
+variables because they have `str` types assigned to them. We can verify this
+
+1. save the code above to a Python module named `string_examples.py` and run it using 
+   IDLE. 
+2. Type the following lines of code at the prompt in the Python shell. 
+
+```py
+>>> type(country_code)
+str
+>>> isinstance(product_code, str)
+True
+```
 
 
 
