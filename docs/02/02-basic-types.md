@@ -7,10 +7,18 @@ Python data types fall into two categories:
 - simple or atomic data types: can not be decomposed into a collection of another type
 - non-atomic data types: are composed of other types
 
-## Atomic Types in Python
+## Built-in Atomic Types
 Python has the following bult-in atomic types:
+
 - Text type: `str`
 - Numeric types: `int`, `float`, `complex`
 - Boolean type: `bool`
 - None Type: `NoneType`
+
+## Built-in Non-Atomic Types
+
+- Sequences: `list`, `tuple`
+- Mappings: `dict`
+- Sets: `set`, `frozenset`
+- Binary Types: `bytes`, `bytearray`
 
