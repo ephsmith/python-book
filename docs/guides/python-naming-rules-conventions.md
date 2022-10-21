@@ -31,3 +31,71 @@ These are part of the PEP8 style guide. Examples are listed below.
 | class names       | `UserProperties()`  | CamelCase     |
 | module names      | `process_files.py`  | snake_case    |
 
+
+## Other Python Naming Conventions
+
+### Names with Leading Underscores
+Names with leading underscores are considered by convention to be *private* and only 
+to be referenced or called (if functions) from the module in which they are defined.  
+This is not enforced by Python itself, but is often enforced by code checkers in 
+modern CI/CD pipelines. Code completion features in many IDEs and the Python shell 
+itself do not auto-complete names that begin with an underscore. 
+
+Third-party developers often use such names to discourage end users of the library 
+from referencing variables or calling functions that were not meant to be called 
+directly. Calling `dir()`. 
+
+### Names with Trailing Underscores
+It is common practice to use a trailing underscore on a name that would otherwise 
+collide with a built-in or previously defined variable. Consider the following Python 
+code block which collects values into a "sum" variable. If the code used the name 
+`sum` it would overwrite the built-in `sum()` function which would then be unreachable 
+by subsequent code.
+
+```py title="trailing_underscores.py"
+matching_product_counts = [10, 20, 30, 40]
+sum_ = 0
+
+for count in matching_product_counts:
+    sum_ += count  #  (1)! 
+    
+print(f'Summed in loop: sum_ = {sum_}')
+    
+# The loop is unnecessary thanks to Python's sum()
+sum_ = sum(matching_product_counts)  #  (2)!
+print(f'Summed using built-in sum(): sum_ = {sum_}')
+```
+
+1. The trailing underscore differentiates the local "sum" variable `sum_` from the 
+   built-in Python function `sum()`
+2. Because `sum_` does not overwrite `sum()` the latter is still available to use as a 
+   function.
+
+!!! tip
+    When using a name that is identical to a built-in function, use a trailing 
+    underscore to differentiate it from existing name. Use this technique sparingly 
+    though and consider using a more meaningful variable name.   
+
+
+!!! warning
+    If you do happen to (or need to) overwrite a built-in name, you can reclaim access 
+    to it by removing the name assignment using the `del` keyword. Example: If you 
+    overwrite `sum()` by assigning `sum = 5`, running `del sum` will reclaim the 
+    reference to the built-in `sum()`. Note that this only works with built-ins.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
