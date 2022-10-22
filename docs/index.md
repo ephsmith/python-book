@@ -15,5 +15,8 @@ for the course.
 Use the site navigation bar to navigate to a specific chapter. Use the
 search feature to find a specific topic.
 
+
+
+
 ## Start Reading
 The best place to start is [Chapter 01](01/01-why-python.md).
