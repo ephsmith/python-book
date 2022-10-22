@@ -18,6 +18,8 @@ nav:
          - 'Setting up Python': '02/02-setting-up-python.md'
          - 'Basic Types': '02/02-basic-types.md'
          - 'Handling Errors': '02/02-handling-errors.md'
+      - '3. Strings':
+         - 'Strings and String Methods': '03/03-long-strings.md'
     - 'References and Guides':
       - 'GitHub': 'guides/github-references.md'
       - 'Rules and Conventions for Names': 'guides/python-naming-rules-conventions.md'

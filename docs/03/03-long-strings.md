@@ -1,6 +1,3 @@
-## Strings and String Methods
-
-
 ### Long String Literals
 The PEP8 style guide requires that lines are no longer that 79 characters in width.  
 This poses a challenge when we need to include long lines of text in our program. 
