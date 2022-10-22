@@ -75,7 +75,7 @@ non-atomic compositions of an atomic character type. Python differs in this rega
     communication interface, but this is not technically a text type. In fact, `bytes` 
     objects must be decoded to convert them to strings.
 
-### `str` Literals
+### Literals and Variables
 A **literal** is an actual value of a certain type that is included in our code. 
 String literals are entered as characters, surrounded by (delimited with) single or 
 double quotes.
@@ -98,7 +98,6 @@ When we run this program, the following is printed to the screen.
 CA EZ123
 ```
 
-### `str` Variables
 To create a string variable, assign a string literal to a name using the assignment 
 operator `=`.  In the program above, `country_code` and `product_code` are both string 
 variables because they have `str` types assigned to them. We can verify this
@@ -114,7 +113,7 @@ str
 True
 ```
 
-### Basic String Operations
+### Basic Operations
 Some basic string operations include:
 
 - concatenation
@@ -154,7 +153,7 @@ Python has three built-in atomic numeric types.  This text focuses on `int` and
 |`float`  | Float type       |`1.11`, `-200.0`, `1_234_567.8`|
 |`complex`| Complex type     |`1 + 1j`, `2.2 + 5j`|
 
-### Numeric Literals and Variables
+###  Literals and Variables
 Just as with `str` types, we need to be aware of how to enter literal values for 
 numeric types. The table above provides examples literals for each numeric type. 
 Creating a variable from any of these types is accomplished the same way as with 
@@ -167,7 +166,20 @@ product_count = 1000
 product_weight = 22.3
 ```
 
-### Type Checks on Numeric Types
+### Special Literal Formatting
+Python numeric types allow the use of underscores (`_`) as thousands separators.  This 
+can be helpful with large values with many repeated digits. Python `float` types allow 
+the use of standard exponential notation for representing very large and very small 
+numbers.  The following examples demonstrate these helpful formats.
+
+```py
+a_very_large_int = 1_000_000_000_000
+a very_large_float = 1_000.000_123_123
+one_thousand = 1e3 
+one_thousanth = 1E-3
+```
+
+### Type Checks
 The Python shell session excerpt below demonstrates type checks on numeric types.  The 
 pattern is the same regardless of the type.  We just supply the correct arguments to 
 the `type()` and `isinstance()` functions.
@@ -185,6 +197,8 @@ True
 
 We will explore methods and operations with numeric types in the coming chapters. For 
 now, we continue our survey of basic Python types with the Boolean type `bool`.
+
+### Basic Operations
 
 ## Boolean Type: `bool`
 The boolean type `bool` is a special type in Python that 
