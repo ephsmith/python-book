@@ -199,21 +199,59 @@ We will explore methods and operations with numeric types in the coming chapters
 now, we continue our survey of basic Python types with the Boolean type `bool`.
 
 ### Basic Operations
+Basic operations for numeric types were covered in the [Use Python as a Calculator](02-setting-up-python.md#use-python-as-a-calculator)
+section. Operations on numeric types can have mixed numeric operands.  For example we 
+can add an `int` to a `float`. In such cases, the result type will be that of the 
+`type` with higher precision--`float` in the case of an `int`-`float` operation.
 
 ## Boolean Type: `bool`
-The boolean type `bool` is a special type in Python that 
+The boolean type `bool` is a special type in Python that is used for representing one 
+of two values: `True` and `False`. These are a special type in Python because they can 
+also be used in any expression where an `int` type is allowed. This is because the 
+`bool` type is implemented as a subclass of `int` in Python. *We know how to test this*.
 
+```py
+>>> isinstance(True, bool)
+True
+>>> isinstance(False, int)
+True
+```
 
+### Literals and Variables
+The previous example demonstrated a few things.  We can see `bool` literals `True` and 
+`False` in the `isinstance()` checks. We also see that `bool` types are both `int` and 
+`bool`.  When a `bool` type is interpreted as an `int`, `True` is `1` and `False` is 
+`0`.  We can see this in action if we introduce a new function--`int()`.  
 
+```pycon
+>>> int(True)
+1
+>>> int(False)
+0
+```
 
+Values of type `bool` can be assigned to a name just like any other type in Python. 
 
+```pycon
+>>> product_in_stock = False
+>>> product_is_back_ordered = True 
+```
 
+We will see `bool` types again when we cover decision making in Python. 
 
+## Sequence Types
+Coming soon.
 
+- Lists and Tuples
 
+## Mapping Types
+Coming soon.
 
+- Dictionaries
 
+## Other Types
 
+Coming Soon
 
-
-
+- Sets: `set`, `frozenset`
+- Binary Types: `bytes`, `bytearray`
