@@ -7,6 +7,10 @@ Python data types fall into two categories:
 - simple or atomic data types: can not be decomposed into a collection of another type
 - non-atomic data types: are composed of other types
 
+Here each of the following types will be covered along with elementary operations that 
+can be performed on them. Later chapters provide more detailed coverage and examples 
+for each type.
+
 ## Built-in Atomic Types
 Python has the following bult-in atomic types:
 
@@ -63,8 +67,13 @@ when checking the type in a program.
 
 ## Text Type: `str`
 Many other languages have multiple text types. In C++, for example, strings are 
-non-atomic compositions of an atomic character type. This is not the case in Python.  
-The only text type in Python is the `str` type. 
+non-atomic compositions of an atomic character type. Python differs in this regard.  
+*The only text type in Python is the `str` type.*
+
+!!! note
+    The `bytes` type is commonly used to store text that is transmitted over a 
+    communication interface, but this is not technically a text type. In fact, `bytes` 
+    objects must be decoded to convert them to strings.
 
 ### `str` Literals
 A **literal** is an actual value of a certain type that is included in our code. 
@@ -105,8 +114,35 @@ str
 True
 ```
 
-You have now created and tested string variables in Python. We will dive deeper into 
-strings in the next chapters.  Next, we cover numeric variables. 
+### Basic String Operations
+Some basic string operations include:
+
+- concatenation
+- repetition
+
+The following code sample demonstrates these to common string operations.
+
+```py title="string_examples.py"
+>>> first_name = "Isaiah"
+>>> last_name = "Thomas"
+>>> full_name = first_name + " " + last_name  #  (1)!
+>>> border = "#" * 20  # (2)!
+>>> print(border)
+>>> print(full_name)
+```
+
+1. **Concatenation**: The `+` operator is used to concatenate strings.
+2. **Repetition**: The `*` operator is used for string repetition.
+
+Strings can be concatenated using the `+` operator. Note that this is 
+both operands must be `str` types. 
+
+The `*` is an interesting case where mixed types are allowed as operands. Repetition 
+expressions are only allowed with `str` and `int` types. Attempting to use a `float` 
+will result in an error.
+
+This completes a basic introduction to string types. More detail will be provided in 
+later chapters.
 
 ## Numeric Types
 Python has three built-in atomic numeric types.  This text focuses on `int` and 
@@ -151,6 +187,7 @@ We will explore methods and operations with numeric types in the coming chapters
 now, we continue our survey of basic Python types with the Boolean type `bool`.
 
 ## Boolean Type: `bool`
+The boolean type `bool` is a special type in Python that 
 
 
 

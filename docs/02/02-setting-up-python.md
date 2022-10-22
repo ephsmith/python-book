@@ -180,6 +180,7 @@ It is also worth noting that the previous result is always stored in
 the varaible `_`.  You can access this instead of copying and pasting
 a result. Example shell session:
 
+
 ```py
 >>> x = 5
 >>> y = 2
