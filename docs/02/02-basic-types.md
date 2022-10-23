@@ -195,7 +195,7 @@ The following example demonstrates a basic `int` conversion. Note that `age_in_m
 could be defined initially as an `int`. It is defined first as a string here for 
 demonstration purposes. 
 
-```py
+```py title="numeric_examples.py"
 MONTHS_PER_YEAR = 12
 name = "Phoenix"
 age_in_months = "12"
@@ -437,7 +437,7 @@ list. For example, if we want to shift all of the values in `nums` by a constant
 can do the following in a loop.  Note that we make use of the `range()` function to 
 get a sequence of index values.
 
-```py
+```py title="list_examples.py"
 nums = [1, 2, 3]
 offset_value = 10
 
@@ -542,7 +542,7 @@ Define a dictionary in Python by enclosing a comma-separated list of `key: value
 pairs with curly-braces `{}`. The following example maps country codes (keys) to 
 country names (values).
 
-```py
+```py title="dictionary_examples.py"
 codes_countries = {'US': 'United States', 'IN': 'India'}
 country = codes_countries['IN']
 print(f'Code IN is for {country}')
@@ -564,7 +564,7 @@ This example uses the `dict()` function to define the `codes_countries` dictiona
 above. Try running this in a Python shell to see that it is equivalent to the previous 
 example.
 
-```py
+```py title="dictionary_examples.py"
 codes_countries = dict(US='United States', IN='India')  # (1)! 
 country = codes_countries['IN']
 print(f'Code IN is for {country}')
