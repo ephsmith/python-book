@@ -68,8 +68,8 @@ when checking the type in a program.
 
 ## Text Type: `str`
 Many other languages have multiple text types. In C++, for example, strings are 
-non-atomic compositions of an atomic character type. Python differs in this regard.  
-*The only text type in Python is the `str` type.*
+non-atomic compositions of an atomic character type. Python differs in this regard. 
+*The only text type in Python is the `str` type.* 
 
 !!! note
     The `bytes` type is commonly used to store text that is transmitted over a 
