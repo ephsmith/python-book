@@ -240,12 +240,66 @@ Values of type `bool` can be assigned to a name just like any other type in Pyth
 We will see `bool` types again when we cover decision making in Python. 
 
 ## Sequence Types
-Coming soon.
+A Python sequence is an ordered collection of items which can be accessed by index 
+number. The length of any sequence can be determined by passing it to the `len()` 
+function which is introduced in this section.
 
-- Lists and Tuples
+In addition to lists and tuples, string and bytes types are also sequences. This 
+section focuses on:
+
+- list type: `list`
+- tuple type: `tuple`
+
+### List Types
+A Python list is an ordered collection of Python objects.  List can hold any 
+type--even other lists.  To define a list using a literal, surround a comma-separated 
+list of object with square brackets: `[ ]`. 
+
+```py title="list_examples.py"
+nums = [1, 2, 3]  # (1)!
+print(type(nums)) # (2)!
+print(nums)       # (3)!
+len(nums)         # (4)!
+```
+
+1. The `list` literal here is a sequence of numbers, separated by commas and 
+   surrounded by a pair of square brackets.
+2. When inspecting type from a Python module, we need to use the `print()` function to 
+   actually see it in the shell output.
+3. We can use `print()` on lists to see a literal representation of the variable.
+4. Pass any sequence to the `len()` function to get the number of items stored. 
+
+```pycon
+>>>
+list
+[1, 2, 3]
+4
+```
+
+### Inspecting Length
+The **length** of a sequence is equivalent to the number of items stored in the 
+sequence.  Pass a list (or any other sequence) to the `len()` function to see how many 
+items are currently stored in the list. 
+
+### Accessing List Items
+There are multiple ways to access list items.  The two most ways to access list items 
+are by index and with list iteration in a `for` loop. 
+
+#### Access by Index
+The items in a sequence are stored in the order in which they were defined. An index 
+value can be used to access each of the stored items.  In Python, index values start 
+from `0`.  For the `nums` variable defined above, the indices are `0, 1, 2`.  Note 
+that `nums` stores 3 items.  Since the index starts at `0`, the max index is actually 
+`len(nums) - 1` or 2. 
+
+| `nums`       |     |     |     |
+|--------------|-----|-----|-----|
+| item value  | 1 | 2 | 3 |
+| index       | 0 | 1 | 2 |
+
 
 ## Mapping Types
-Coming soon.
+Coming soon. 
 
 - Dictionaries
 
