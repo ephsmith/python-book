@@ -310,7 +310,6 @@ Running `list_examples.py` produces the following output in the console.
 ['H', 'e', 'l', 'l', 'o']
 ```
 
-
 #### Inspecting Length
 The **length** of a sequence is equivalent to the number of items stored in the 
 sequence.  Pass a list (or any other sequence) to the `len()` function to see how many 
@@ -397,6 +396,37 @@ print(nums)
 2. Here, one item is accessed by index per loop run. The `offset_value` is added to 
    each and then assigned back to the list item.  This is *item assignment*.
 
+### Tuple Types
+The section on lists demonstrated a number of features of sequence types in Python.  
+Sequence types support use of the `len()` function for determining length, *indexing* 
+for accessing items.  Sequence types also support iteration. Tuples are another 
+sequence type that has these same features. Tuples are quite similar to lists. There 
+are two differences:
+
+- use `( )` instead of square brackets to define a `tuple`
+- `tuple` type variables *do not support* item assignment. 
+
+The following table provides a comparison of tuples and lists:
+
+| feature |  `list`   | `tuple`|
+|---|---|---|
+| index access | :material-checkbox-marked: | :material-checkbox-marked:|
+| len()| :material-checkbox-marked:| :material-checkbox-marked:|
+| iteration| :material-checkbox-marked:|:material-checkbox-marked:|
+| item assignment | :material-checkbox-marked: |:octicons-x-24:|
+
+Tuples *do not support item assignment.*  Attempting to change an item stored in a 
+tuple will lead to an error. Try the following in the Python shell:
+
+```pycon title="Tuples do not support item assignment"
+>>> nums = (1, 2, 3)   # (1)!
+>>> nums[0] = 11       # (2)!
+TypeError                                 Traceback (most recent call last)
+Input In [122], in <cell line: 1>()
+----> 1 nums[0] = 11
+
+TypeError: 'tuple' object does not support item assignment
+```
 
 
 ## Mapping Types
