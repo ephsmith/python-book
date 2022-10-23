@@ -23,6 +23,7 @@ nav:
     - 'References and Guides':
       - 'GitHub': 'guides/github-references.md'
       - 'Rules and Conventions for Names': 'guides/python-naming-rules-conventions.md'
+      - 'Style Guidelines': 'guides/style-guidelines.md'
 
 
 
