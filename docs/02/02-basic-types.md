@@ -114,7 +114,10 @@ True
 ```
 
 ### The `str()` Function
-TODO
+The `str()` function can be used to:
+
+- create an empty string: `str()` with no arguments yields `''`. 
+- convert a compatible type to a string. Example: `str(5)` yields `"5"`
 
 ### Basic Operations
 Some basic string operations include:
@@ -183,10 +186,31 @@ one_thousanth = 1E-3
 ```
 
 ### The `int()` Function
-TODO
+This function can be used to:
+
+- create a zero-valued `int`. Example: `int()` yields `0`.
+- convert a compatible type to an `int` type. Example: `int("10")` yields an `int` `10`.
+
+The following example demonstrates a basic `int` conversion. Note that `age_in_months` 
+could be defined initially as an `int`. It is defined first as a string here for 
+demonstration purposes. 
+
+```py
+MONTHS_PER_YEAR = 12
+name = "Phoenix"
+age_in_months = "12"
+
+# convert age_in_months to a int
+age_in_months = int(age_in_months)
+age_in_years = age_in_months / MONTHS_PER_YEAR
+print(f'{name} is {age_in_months} months (or {age_in_years} years) old!')
+```
 
 ### The `float()` function
-TODO
+This function is used to:
+
+- create a zero-valued `float` type. Example: `float()` yields `0.0` (a `float` type).
+- convert a compatible type to `float`. Example: `float("1.234")` yields `1.234`. 
 
 ### Type Checks
 The Python shell session excerpt below demonstrates type checks on numeric types.  The 
@@ -247,6 +271,26 @@ Values of type `bool` can be assigned to a name just like any other type in Pyth
 ```
 
 We will see `bool` types again when we cover decision making in Python. 
+
+
+### The `bool()` Function
+This function is used to:
+
+- create a False valued `bool` type. Example: `bool()` yields `False`.
+- convert a compatible type to a `bool` type. `bool(1)` yields `True`.
+- interpret a Python object as a boolean (True or False)
+
+The third bullet above requires a bit more explanation.  In general, Python considers 
+any 0 value to be False.  Non-numeric types are interpreted differently.  A 
+zero-valued string, for example, has no characters. For built-in types, the value 
+returned by the function associated with the type is considered as False.
+
+The following list has some example of boolean interpretation of non-numeric types. 
+
+- empty strings: `False`
+- empty lists or tuples: `False`
+- non-empty string, list, or tuple: `True` 
+
 
 ## Sequence Types
 A Python sequence is an ordered collection of items which can be accessed by index 
