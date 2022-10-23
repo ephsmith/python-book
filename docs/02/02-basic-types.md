@@ -577,11 +577,45 @@ print(f'Code IN is for {country}')
 Dictionaries have a full chapter devoted to them where they are covered in more detail.
 We know turn our attention to Sets.
 
-- Dictionaries
+## Set Types
+Python sets are *unordered* collections of unique Python objects.  Python sets are 
+implemented by the `set` type. Set types can only store certain types. This type 
+requires a good bit of additional discussion that is covered in a later chapter.  For 
+this gentle introduction to `set` types covers only built-in Python types that can be 
+stored in a set. 
 
-## Other Types
+Sets are used to:
 
-Coming Soon
+- remove duplicates from other types like lists and tuples.
+- perform mathematical set operations like intersection and union.
 
-- Sets: `set`, `frozenset`
-- Binary Types: `bytes`, `bytearray`
+### Literals and Values
+Define a `set` variable using a `set` literal which is a comma-separated sequence of 
+objects enclosed in curly braces `{ }`. The following example defines a set of words. 
+Note that even though the word "shrub" is included twice, there is only one such value 
+stored in the resulting set.
+
+```py
+woody_plants = {'tree', 'shrub', 'bush', 'hedge', 'shrub'}
+print(woody_plants)
+```
+
+Running this example results in the following output. Note that the order is not 
+preserved. Sets are *unordered* collections. 
+
+```pycon
+{'shrub', 'tree', 'hedge', 'bush'}
+```
+
+!!! caution
+    Sets and dictionaries both use curly braces `{ }` as delimiters. The two can be 
+    easily distinguished from each other because `set` types do not contain any `:`. 
+    Note also that an empty `dict` literal is `{}` whereas an empty `set` literal is 
+    `set()`. 
+
+### The `set()` Function
+This function is used to:
+
+- create an empty `set` type. Example: `set()` yields `set()`.
+- create a set from another compatible type. Example `set('abc')` yields `{'a', 'b','c'}`.
+
