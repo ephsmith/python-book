@@ -291,6 +291,18 @@ The following list has some example of boolean interpretation of non-numeric typ
 - empty lists or tuples: `False`
 - non-empty string, list, or tuple: `True` 
 
+## `NoneType` Type
+This is a special type in Python. More accurately, there is only one instance of this type
+stored in memory in a Python program as `None`.  It is used to represent the absence 
+of a value. This type is used as:
+
+- default arguments in functions
+- to check the return (or absence of a return) value from a function
+- an explicit value returned form a function to signal information to the caller
+
+!!! caution
+    Always use the `is` keyword when making comparisons to `None`.  Example `if name is 
+    None...`.  
 
 ## Sequence Types
 A Python sequence is an ordered collection of items which can be accessed by index 
