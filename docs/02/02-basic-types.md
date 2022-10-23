@@ -4,6 +4,7 @@ operate on a variety of types of data.  Different types are handled differently 
 Python program so it is important to understand the basic types that Python provides.
 
 Python data types fall into two categories: 
+
 - simple or atomic data types: can not be decomposed into a collection of another type
 - non-atomic data types: are composed of other types
 
