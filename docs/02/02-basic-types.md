@@ -508,8 +508,74 @@ This function is used to:
 - create an empty `tuple`. Note: this is not very useful accept for comparisons.
 - convert a compatible type to `tuple`. Example: `tuple('abc')` yields `('a', 'b' 'c')`
 
-## Mapping Types
-Coming soon. 
+## Dictionary Types
+Mapping types are referred to as Dictionaries in the Python vernacular.  In Python 
+mappings are implemented by the `dict` type. Mappings map lookup *keys* to *values* in a 
+one-to-one, directional relationship. This is similar to dictionaries used for 
+language.  When we look up a word in glossary or dictionary, we locate the definition. 
+In this analogy, the words are keys and the definitions are values. 
+
+We can create our own language dictionary using a `dict` in Python. Here, the 
+definitions are shortened from the [Oxford English Dictionary](https://www.oed.com). 
+
+```py title="dict_examples.py"
+definitions = {
+    'tree': 'a woody perennial plant.',
+    'shrub': 'a woody plant which is smaller than a tree',
+    'bush': 'a shrub or clump of shrubs',
+    'hedge': 'a fence or boundary formed by closely growing bushes or shrubs'
+}
+
+# Get the definition of tree
+tree_definition  = definitions['tree']
+print(f'tree: {tree_definition}')
+```
+
+This program outputs:
+
+```pycon
+>>>
+tree: a woody perennial plant.
+```
+
+### Literals and Values
+Define a dictionary in Python by enclosing a comma-separated list of `key: value` 
+pairs with curly-braces `{}`. The following example maps country codes (keys) to 
+country names (values).
+
+```py
+codes_countries = {'US': 'United States', 'IN': 'India'}
+country = codes_countries['IN']
+print(f'Code IN is for {country}')
+```
+
+Output:
+
+```pycon
+Code IN is for India
+```
+
+### The `dict()` Function
+This function is used to:
+
+- create an empty dictionary. Example `dict()` yields `{}`.
+- create a new dictionary from keyword arguments. See example below.
+
+This example uses the `dict()` function to define the `codes_countries` dictionary 
+above. Try running this in a Python shell to see that it is equivalent to the previous 
+example.
+
+```py
+codes_countries = dict(US='United States', IN='India')  # (1)! 
+country = codes_countries['IN']
+print(f'Code IN is for {country}')
+```
+
+1. Note that string keys to not need quotes when using the `dict()` function to define 
+   a dictionary.
+
+Dictionaries have a full chapter devoted to them where they are covered in more detail.
+We know turn our attention to Sets.
 
 - Dictionaries
 
