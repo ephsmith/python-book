@@ -285,7 +285,7 @@ items are currently stored in the list.
 There are multiple ways to access list items.  The two most ways to access list items 
 are by index and with list iteration in a `for` loop. 
 
-#### Access by Index
+#### List Items by Index
 The items in a sequence are stored in the order in which they were defined. An index 
 value can be used to access each of the stored items.  In Python, index values start 
 from `0`.  For the `nums` variable defined above, the indices are `0, 1, 2`.  Note 
@@ -296,6 +296,48 @@ that `nums` stores 3 items.  Since the index starts at `0`, the max index is act
 |--------------|-----|-----|-----|
 | item value  | 1 | 2 | 3 |
 | index       | 0 | 1 | 2 |
+
+When you access an item by index, the value is returned.  This value can be used like 
+any other value in Python. The following example demonstrates basic index access. 
+
+
+```py title="list_examples.py"
+city_state = ['Memphis', 'TN']
+city = city_state[0]
+state = city_state[1]
+city_state_string = city + ',' + state
+print(city_state_string)
+```
+
+When we run `list_examples.py` now, the following is output to the shell:
+
+```pycon
+>>>
+Memphis, TN
+```
+
+#### Lists in a for Loop
+Lists are commonly used to store similar items.  Similar items are often processed 
+similarly in a program.  Python `for` loops provide an efficient way to access and 
+process every item in a list. 
+
+```py linenums="1"
+nums = [1, 2, 3]
+
+for num in nums:        # (1)!
+    squared = num ** 2  
+    print(squared)   
+```
+
+1. The membership expression `num in nums` will extract one element from `nums` and 
+   assign it to `num` on each loop run.
+
+The first line in the `for` loop (line 3) instructs the loop to:
+
+1. extract one item at a time from `nums`
+2. assign it to `num` 
+3. run the loop body (lines 4-5).
+
 
 
 ## Mapping Types
