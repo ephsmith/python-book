@@ -677,7 +677,7 @@ woody_plants = {'tree','shrub','bush','hedge'}
 woody_plants = {'tree', 'shrub', 'bush', 'hedge'}
 ```
 
-## Spaces After `:`
+### Spaces After `:`
 When defining dictionaries, include a single space after every semicolon `:`.
 
 ```py
