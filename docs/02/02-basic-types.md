@@ -428,6 +428,23 @@ Input In [122], in <cell line: 1>()
 TypeError: 'tuple' object does not support item assignment
 ```
 
+1. Create a `tuple` containing 1, 2, and 3.
+2. Attempt to assign `11` to the item at index `0`.  
+
+Whenever you see a `does not support item assignment` error, it means that the data 
+type you are using does not support item assignment: `str` and `tuple` are two such 
+types.
+
+### Tuples are Immutable
+Tuples do not support item assignment.  This means that once a tuple is defined, it 
+can not be modified.  This is an essential feature of tuples called immutability. That 
+is to say: tuples are immutable. This is very useful in programs where you need to 
+pass data to functions with the assurance that the data will not be modified during 
+the program run. 
+
+### Tuples are Lightweight
+Tuples require less program memory than lists making tuples a great data type to 
+consider when optimizing a program for performance.  
 
 ## Mapping Types
 Coming soon. 
