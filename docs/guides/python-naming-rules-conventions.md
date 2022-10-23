@@ -83,7 +83,20 @@ print(f'Summed using built-in sum(): sum_ = {sum_}')
     overwrite `sum()` by assigning `sum = 5`, running `del sum` will reclaim the 
     reference to the built-in `sum()`. Note that this only works with built-ins.  
 
+### UPPERCASE Names
+It is convention to use UPPER_CASE (snake case) for names to which constants are 
+defined.  For example, the number of minutes in a day never changes in the real world 
+and is therefore a constant if used in a program. 
 
+Example:
+
+```py
+MINUTES_PER_DAY = 1440
+
+minutes_so_far = 14_440_000
+
+days_so_far = minutes_so_far / MINUTES_PER_DAY
+```
 
 
 
