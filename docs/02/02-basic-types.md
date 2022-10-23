@@ -338,7 +338,29 @@ The first line in the `for` loop (line 3) instructs the loop to:
 2. assign it to `num` 
 3. run the loop body (lines 4-5).
 
+This process is referred to as **iteration**.  Here, we are iterating over the items 
+in `nums`. Python types that support iteration in this way are called **iterables**. 
+Lists are iterables. 
 
+#### List Item Assignment
+Python `list` types *support item assignment*. This means that we modify the items in a 
+list. For example, if we want to shift all of the values in `nums` by a constant, we 
+can do the following in a loop.  Note that we make use of the `range()` function to 
+get a sequence of index values.
+
+```py
+nums = [1, 2, 3]
+offset_value = 10
+
+for k in range(len(nums)):            # (1)!
+    nums[k] = nums[k] + offset_value  # (2)!
+print(nums)
+```
+
+1. `range(len(nums))` is the same as `range(3)`.  This will provide the sequence 0, 1, 
+   2 which is used in the loop to access the items by index.
+2. Here, one item is accessed by index per loop run. The `offset_value` is added to 
+   each and then assigned back to the list item.  This is *item assignment*.
 
 ## Mapping Types
 Coming soon. 
