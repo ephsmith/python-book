@@ -626,7 +626,10 @@ here.  The following examples demonstrate how to follow these widely accepted gu
 ### String Delimiters
 In Python, single and double quotes are equivalent. PEP8 makes no recommendation as to 
 which one to use for string delimiters.  Decide which one you prefer and use it 
-consistently throughout a single codebase.
+consistently throughout a single codebase.[^1]
+
+[^1]: See [PEP8 String Delimiters](https://peps.python.org/pep-0008/#string-quotes)
+
 ```py
 # WRONG:
 first_name = "Jack"
@@ -642,7 +645,7 @@ last_name = 'Handy'    # pick one type and use it consistently
 ### Sequences
 Sequences of values or variables are used when defining lists, tuples, dictionaries, and 
 sets. PEP8 makes a general recommendation that a space be included after *any* comma 
-that is not at the end of a line. When defining these types, include these spaces.
+that is not at the end of a line. When defining these types, include these spaces.[^2]
 
 The following examples demonstrate:
 
@@ -679,6 +682,8 @@ woody_plants = {'tree', 'shrub', 'bush', 'hedge'}
 ### Spaces After `:`
 When defining dictionaries, include a single space after every semicolon `:`.
 
+
+
 ```py
 # WRONG:
 codes_countries = {'US':'United States', 'IN':'India'}
@@ -692,3 +697,6 @@ codes_countries = {'US': 'United States', 'IN': 'India'}
 ## Summary
 This concludes a rather broad survey of basic Python types. Each of these types 
 receives detailed coverage in later chapters.
+
+## Related Links
+- [Official Documentation - Built-in Types](https://docs.python.org/3/library/stdtypes.html)
