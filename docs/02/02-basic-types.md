@@ -95,7 +95,6 @@ print(country_code, product_code)
 When we run this program, the following is printed to the screen.
 
 ```python
->>>
 CA EZ123
 ```
 
@@ -403,7 +402,6 @@ print(city_state_string)
 When we run `list_examples.py` now, the following is output to the shell:
 
 ```pycon
->>>
 Memphis, TN
 ```
 
