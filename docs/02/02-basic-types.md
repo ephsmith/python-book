@@ -619,3 +619,6 @@ This function is used to:
 - create an empty `set` type. Example: `set()` yields `set()`.
 - create a set from another compatible type. Example `set('abc')` yields `{'a', 'b','c'}`.
 
+## Summary
+This concludes a rather broad survey of basic Python types. Each of these types 
+receives detailed coverage in later chapters.
