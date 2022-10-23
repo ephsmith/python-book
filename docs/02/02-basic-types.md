@@ -113,6 +113,9 @@ str
 True
 ```
 
+### The `str()` Function
+TODO
+
 ### Basic Operations
 Some basic string operations include:
 
@@ -178,6 +181,12 @@ a very_large_float = 1_000.000_123_123
 one_thousand = 1e3 
 one_thousanth = 1E-3
 ```
+
+### The `int()` Function
+TODO
+
+### The `float()` function
+TODO
 
 ### Type Checks
 The Python shell session excerpt below demonstrates type checks on numeric types.  The 
@@ -276,12 +285,38 @@ list
 4
 ```
 
-### Inspecting Length
+#### The list() Function
+As with other types, the `list()` function, called with no arguments, returns an 
+*empty* list. When called with a compatible argument, the input argument is converted 
+to a list. The following examples demonstrate.
+
+```py title="list_examples.py"
+empty = list()                 # (1)! 
+message = 'Hello'              
+letters = list(message)        # (2)!
+
+print(empty)
+print(letters)
+```
+
+1. Calling `list()` with no arguments creates an empty list `[]`. 
+2. Calling `list()` on a `str` type will create a list where each item is a single 
+   character from the source string.
+
+Running `list_examples.py` produces the following output in the console.
+
+```pycon
+[]
+['H', 'e', 'l', 'l', 'o']
+```
+
+
+#### Inspecting Length
 The **length** of a sequence is equivalent to the number of items stored in the 
 sequence.  Pass a list (or any other sequence) to the `len()` function to see how many 
 items are currently stored in the list. 
 
-### Accessing List Items
+#### Accessing List Items
 There are multiple ways to access list items.  The two most ways to access list items 
 are by index and with list iteration in a `for` loop. 
 
@@ -361,6 +396,8 @@ print(nums)
    2 which is used in the loop to access the items by index.
 2. Here, one item is accessed by index per loop run. The `offset_value` is added to 
    each and then assigned back to the list item.  This is *item assignment*.
+
+
 
 ## Mapping Types
 Coming soon. 
