@@ -490,6 +490,12 @@ the program run.
 Tuples require less program memory than lists making tuples a great data type to 
 consider when optimizing a program for performance.  
 
+### The `tuple()` Function
+This function is used to:
+
+- create an empty `tuple`. Note: this is not very useful accept for comparisons.
+- convert a compatible type to `tuple`. Example: `tuple('abc')` yields `('a', 'b' 'c')`
+
 ## Mapping Types
 Coming soon. 
 
