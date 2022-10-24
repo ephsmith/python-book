@@ -10,8 +10,8 @@ reference.
 Pass any iterable to the `enumerate()` function, and it will return a lazy sequence of 
 tuples containing a *count* (staring at 0) and values returned from iterating over the 
 iterable. Note that `enumerate()` iterates *lazily* (only as needed) instead of 
-returning all elements of the sequence. We can coerce `enumerate()` into returning 
-all items in the sequence by passing it to `list` or `tuple`.
+returning all elements of the sequence. This is not typically a problem because 
+enumerate is widely used when iterating over the target sequence passed to it. 
 
 ```py title="enumerate_example.py"
 country_codes = ['IN', 'NL', 'US']
@@ -26,6 +26,15 @@ Running `enumerate_example.py` produces the following output in the Python shell
 0 IN
 1 NL
 2 US
+```
+
+We can coerce `enumerate()` into returning all items in the sequence by passing it to 
+`list` or `tuple`. 
+
+```pycon
+>>> # force enumerate to return all items
+>>> list(enumerate(country_codes))
+[(0, 'IN'), (1, 'NL'), (2, 'US')]   # a list of tuples is returned.
 ```
 
 
