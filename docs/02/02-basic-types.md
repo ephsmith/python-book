@@ -22,7 +22,7 @@ Python has the following bult-in atomic types:
 
 ## Built-in Non-Atomic Types
 
-- Sequences: `list`, `tuple`
+- Sequences: `list`, `tuple`, `range`
 - Mappings: `dict`
 - Sets: `set`, `frozenset`
 - Binary Types: `bytes`, `bytearray`
@@ -506,6 +506,118 @@ This function is used to:
 
 - create an empty `tuple`. Note: this is not very useful accept for comparisons.
 - convert a compatible type to `tuple`. Example: `tuple('abc')` yields `('a', 'b' 'c')`
+
+
+## Range Types
+Python's `range()` type is a type that has a very specific purpose--producing a 
+uniform sequence of integers. Like `tuples` the `range` sequences are immutable.  
+A range type object is created differently compared to other types in Python but they 
+are indeed a sequence type. 
+
+### Literals and Variables
+Range types are created by calling the `range()` function with a list of arguments 
+that specify the desired sequence range and step. The call signature for the range 
+function is:
+
+```{: .optional-language-as-class .no-copy}
+range(stop)  # or ...
+range(start, stop, [step])
+```
+
+There are a few different variations on calling range that we need to be aware of to 
+use it with master:
+
+- If called with `stop` only, `range()` will return a sequence `0, 1, 2, ..., 
+stop-1`.  Note that `stop` is not included in the sequence.
+- If called with `start` and `stop` (`step` is optional), then the sequence `1, 2, ...,
+  stop-1` is returned.
+- When called with all 3 parameters, the `step` argument is the interval between 
+  successive elements in the sequence. 
+
+The following examples show a few example ranges:
+
+```py
+range(5)           # (1)!
+# 0, 1, 2, 3, 4
+
+range(1, 5)        # (2)!
+# 1, 2, 3, 4
+
+range(1, 5, 2)     # (3)!
+# 1, 3
+
+range(0, -5, -1)   # (4)!
+# 0, -1, -2, -3, -4
+
+range(-1, -5, -2)  # (5)!
+# 0, -2, -4
+```
+
+1. Calling `range()` with `stop` only results in a sequence that starts at 0.
+2. Specify `start` to start at a value other than 0.
+3. Specify the optional `step` argument to specify the interval between successive 
+   sequence elements.
+4. `step` can be negative. The results in descending order sequence.
+5. The `stop` argument is still not included in descending sequences.
+
+If you try to inspect a `range` type in the Python shell, you will see the function 
+call needed to recreate the `range` object you are inspecting.  In other words, the 
+*literal* representation of a `range` type is the function call that creates it.  Try 
+running the following line in the Python shell:
+
+```py
+range(1, 11)
+```
+
+You should see the output `range(1, 11)`. 
+
+Range objects can be assigned a names like any other type.  Therefore the following 
+works.  We can even check the type like any other type. Try running the following 
+lines one at a time in a shell to avoid the need to add `print()` calls.
+
+```py 
+my_sequence = range(10, 101, 10)
+type(my_sequence)
+isinstance(my_sequence, range)
+```
+The output *when run from the shell* is:
+
+```pycon
+>>> my_sequence = range(10, 101, 10)
+>>> type(my_sequence)
+range
+>>> isinstance(my_sequence, range)
+True
+```
+
+### Range Objects are Lazy
+Range objects do not immediately evaluate and return a sequence. This is why we see 
+`range(10, 101, 10)` when we inspect the variable `my_sequence` above.  Why is this so?
+Well, imagine you defined this range:
+
+```py title="range_examples.py"
+big_range = range(10_000_000_000)  # 10 billion integers
+print(big_range)
+```
+Your computer would need to come up with enough free memory to store 10 billion 
+integers--an estimated 40 GB.  This is an unreasonable amount of space for a sequence 
+that may only be used in a `for` loop. Range objects evaluate the next item in the 
+sequence when it is needed (lazy iteration/evaluation). This way, you can loop through 
+the range 0 to 10 billion without the memory overhead.
+
+We can coerce a `range` object into another sequence (eager evaluation) by using `list
+()` or `tuple()`.  The following example demonstrates:
+
+```py
+my_sequence = list(range(10, 101, 10))
+print(my_sequence)
+```
+
+Which outputs:
+
+```py
+[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+```
 
 ## Dictionary Types
 Mapping types are referred to as Dictionaries in the Python vernacular.  In Python 

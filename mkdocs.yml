@@ -74,6 +74,7 @@ plugins:
 
 extra_css:
   - css/hint.min.css
+  - css/custom.css
 
 theme:
   icon:
