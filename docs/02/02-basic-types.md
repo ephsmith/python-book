@@ -316,7 +316,8 @@ of a value. This type is used as:
 ## Sequence Types
 A Python sequence is an ordered collection of items which can be accessed by index 
 number. The length of any sequence can be determined by passing it to the `len()` 
-function which is introduced in this section.
+function which is introduced in this section. Note that `str` types are *also* 
+sequence types. 
 
 In addition to lists and tuples, string and bytes types are also sequences. This 
 section focuses on:
