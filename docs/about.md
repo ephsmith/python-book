@@ -37,8 +37,3 @@ When in doubt about language features, one can always reference the
 [official documentation](https://docs.python.org) and select the correct
 version from the dropdown.
 
-## Feedback
-There is a feedback widget at the bottom of every page. If you experience an issue, 
-simply click the :material-emoticon-sad-outline: and then click the feedback link.  
-You'll be directed to a pre-filled GitHub issue where you can efficiently describe the 
-issue.  
