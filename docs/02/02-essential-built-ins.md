@@ -38,6 +38,13 @@ We can coerce `enumerate()` into returning all items in the sequence by passing 
 ```
 
 
+!!! tip
+    A great use case for enumerate is when looping over an iterable of unknown size. 
+    This may sound strange at first. File reading is a classic example of this. If we 
+    want to keep an index of each line in a file as we read the file, we can use 
+    `enumerate()`.  
+
+
 ### `len()`
 Pass any container to the `len()` function, and it will return the number of items 
 stored in the container. A container is any type in Python that stores an arbitrary 
@@ -51,5 +58,4 @@ example may be required for use on `dict` types.
 ```
 
 1. `len()` returns the number of keys when called on a `dict` type.
-
 
