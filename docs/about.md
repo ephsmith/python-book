@@ -4,7 +4,7 @@ Software Programming, a course that I instruct a Christian Brother's
 University in Memphis, TN.
 
 There are a number of fantastic books on the subject of Python
-programming. However none of the books that I met my standards to
+programming. However, none of the books that I reviewed met my standards to
 alignment with the introductory requirements of the course while still providing
 enough depth in coverage of the language. My effort here is an
 attempt to fill the gap that I have found in the literature.
