@@ -128,16 +128,25 @@ Some basic string operations include:
 The following code sample demonstrates these to common string operations.
 
 ```py title="string_examples.py"
->>> first_name = "Isaiah"
->>> last_name = "Thomas"
->>> full_name = first_name + " " + last_name  #  (1)!
->>> border = "#" * 20  # (2)!
->>> print(border)
->>> print(full_name)
+first_name = "Isaiah"
+last_name = "Thomas"
+full_name = first_name + " " + last_name  #  (1)!
+border = "#" * 20  # (2)!
+print(border)
+print(full_name)
+print(border)
 ```
 
 1. **Concatenation**: The `+` operator is used to concatenate strings.
 2. **Repetition**: The `*` operator is used for string repetition.
+
+When `string_examples.py` above is run, the following is printed to the Python shell:
+
+```pycon title="string_examples.py output"
+####################
+Isaiah Thomas
+####################
+```
 
 Strings can be concatenated using the `+` operator. Note that this is 
 both operands must be `str` types. 
