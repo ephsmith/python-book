@@ -149,7 +149,9 @@ Check out the documentation on [viewing auto-grading output](https://docs.github
     the requirements listed in the `requirements.txt` file located in you repo. This 
     is the topic of another article.   
 
-
+## Related Links
+- [Configure Pycharm for GitHub](https://www.jetbrains.com/help/pycharm/github.html)
+- [Configure VS Code for GitHub](https://vscode.github.com)
 
 
 
