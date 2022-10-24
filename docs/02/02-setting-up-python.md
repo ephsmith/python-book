@@ -353,3 +353,8 @@ Thoughts on Notebooks:
 - **Side benefit**: The [IPython](https://ipython.readthedocs.io/en/stable/) shell is installed when you install
   Jupyter Lab or classic Jupyter Notebooks. This advanced Python shell
   has many wonderful features.
+
+## Related Resources
+- From the official Documentation
+  - [Using the Python Interpreter](https://docs.python.org/3/tutorial/interpreter.html#interactive-mode)
+    Discusses launching the Python interpreter from the commandline.
