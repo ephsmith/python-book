@@ -191,7 +191,7 @@ numbers.  The following examples demonstrate these helpful formats.
 a_very_large_int = 1_000_000_000_000
 a very_large_float = 1_000.000_123_123
 one_thousand = 1e3 
-one_thousanth = 1E-3
+one_thousandth = 1E-3
 ```
 
 ### The `int()` Function
