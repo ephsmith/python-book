@@ -12,7 +12,7 @@ attempt to fill the gap that I have found in the literature.
 The medium I have chosen is a hosted site-based text. This provides a
 number of benefits for both author and reader.
 
-- continuous updates
+- continuous updates 
 - interactive content
 - modern web reading experience that is a readable on mobile as it is
   on desktop
@@ -36,3 +36,9 @@ notebooks there, the Python version will likely be 3.8.
 When in doubt about language features, one can always reference the
 [official documentation](https://docs.python.org) and select the correct
 version from the dropdown.
+
+## Feedback
+There is a feedback widget at the bottom of every page. If you experience an issue, 
+simply click the :material-emoticon-sad-outline: and then click the feedback link.  
+You'll be directed to a pre-filled GitHub issue where you can efficiently describe the 
+issue.  
