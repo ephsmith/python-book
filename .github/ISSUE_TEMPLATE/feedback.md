@@ -2,7 +2,7 @@
 name: Feedback
 about: Provide feedback related to the live text Introductory Python
 title: ''
-labels: documentation
+labels: feedback
 assignees: ephsmith
 
 ---
