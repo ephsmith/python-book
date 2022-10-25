@@ -12,12 +12,13 @@ nav:
     - Book:
       - '1. Why Python?': '01/01-why-python.md'
       - '2. First Steps with Python':
-         - 'Setting up Python': '02/02-setting-up-python.md'
-         - 'Basic Types': '02/02-basic-types.md'
-         - 'Essential Built-Ins': '02/02-essential-built-ins.md'
-         - 'Handling Errors': '02/02-handling-errors.md'
+          - 'Setting up Python': '02/02-setting-up-python.md'
+          - 'Basic Types': '02/02-basic-types.md'
+          - 'Essential Built-Ins': '02/02-essential-built-ins.md'
+          - 'Handling Errors': '02/02-handling-errors.md'
       - '3. Strings':
-         - 'Long String Literals': '03/03-long-strings.md'
+          - 'Strings and String Methods': '03/03-strings.md'
+          - 'Long String Literals': '03/03-long-strings.md'
     - 'References and Guides':
       - 'GitHub': 'guides/github-references.md'
       - 'Rules and Conventions for Names': 'guides/python-naming-rules-conventions.md'
