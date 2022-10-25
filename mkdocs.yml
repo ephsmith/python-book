@@ -10,7 +10,7 @@ extra:
   generator: false
   analytics:
     provider: Google
-    property: G-6RPMK5EMYE
+    property: G-QMGXXK5ZHY
     feedback:
       title: Was this page helpful?
       ratings:
