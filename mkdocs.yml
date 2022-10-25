@@ -41,8 +41,8 @@ extra:
           name: This page could be improved
           data: 0
           note: >-
-            Thanks for your feedback! Help us improve this page by
-            using our <a href="https://github.com/ephsmith/python-book/issues/new?assignees=ephsmith&labels=feedback&template=feedback.md&title={title}+-+{url}" target="_blank" rel="noopener">feedback form</a>.
+            Thanks for your feedback! Help improve this page by
+            using the <a href="https://github.com/ephsmith/python-book/issues/new?assignees=ephsmith&labels=feedback&template=feedback.md&title={title}+-+{url}" target="_blank" rel="noopener">feedback form</a>.
 
 
 
