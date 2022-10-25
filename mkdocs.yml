@@ -27,7 +27,7 @@ nav:
 extra:
   generator: false
   analytics:
-    provider: Google
+    provider: google
     property: G-QMGXXK5ZHY
     feedback:
       title: Was this page helpful?
