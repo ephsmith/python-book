@@ -15,9 +15,10 @@ Your feedback is appreciated and will be used to make improvements!
 - Does this issue title match the page you are providing feedback on?  
 
 - Which category best describes the reason you are providing feedback?
-    - Content needs improvement
-    - Problem with example code
-    - Grammatical or typographical errors
-    - Other site related or technical issue
+
+    - [ ] Problem with example code
+    - [ ] Grammatical or typographical errors
+    - [ ] Other site related or technical issue
+    - [ ] Something else
 
 # Describe the issue below this line
