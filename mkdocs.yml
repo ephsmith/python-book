@@ -14,6 +14,7 @@ nav:
       - '2. First Steps with Python':
           - 'Setting up Python': '02/02-setting-up-python.md'
           - 'Basic Types': '02/02-basic-types.md'
+          - 'Python Typing': '02/02-python-typing.md'
           - 'Essential Built-Ins': '02/02-essential-built-ins.md'
           - 'Handling Errors': '02/02-handling-errors.md'
       - '3. Strings':
