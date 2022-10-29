@@ -12,7 +12,13 @@ Consider the example `"100" + 1`.  In Javascript, the result is `"1001"`.
 If types are important, then why aren't 
 types explicit?  That is to say, why aren't types included when we define a variable?
 This is because Python is a dynamically typed language.  This means that the type of a 
-variable is determined when the program is run--not in the source.
+variable is determined when the program is run--not when the source code is read by 
+the interpreter. 
+
+!!! note
+    You will see types included in modern Python code. These are referred to as "type 
+    hints" and are used by development tools for code quality assurance. Type hints do 
+    not *force* Python to use a specific type. 
 
 
 
