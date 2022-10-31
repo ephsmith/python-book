@@ -18,7 +18,7 @@ nav:
           - 'Essential Built-Ins': '02/02-essential-built-ins.md'
           - 'Handling Errors': '02/02-handling-errors.md'
       - '3. Strings':
-          - 'Strings and String Methods': '03/03-strings.md'
+          # - 'Strings and String Methods': '03/03-strings.md'
           - 'Long String Literals': '03/03-long-strings.md'
     - 'References and Guides':
       - 'GitHub': 'guides/github-references.md'
