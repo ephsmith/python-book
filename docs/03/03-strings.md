@@ -260,10 +260,6 @@ total:  1.98
 total: -1.98
 ```
 
-## Format Strings
-
-
-
 ## String Methods
 - Methods are functions (like `print()`) that are "*attached*" to objects.
 - String methods are functions attached to `str` objects.  
