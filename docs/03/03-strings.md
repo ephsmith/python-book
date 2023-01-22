@@ -265,7 +265,9 @@ total: -1.98
 - String methods are functions attached to `str` objects.  
 - Use the `.method()` pattern for calling
 - Some useful methods:
-    - `.upper()`, `.lower()`, `.title()`
+    - `.upper()`: returns an `UPPERCASE` copy of the string
+    - `.lower()`: returns a `lowercase` copy of the string
+    - `.title()`: returns a `Title Case` copy fo the string
     - `.strip()`, `.rstrip()`, and `.lstrip()`
     - `.startswith()`, `.endswith()`
 - `.split()` and `.splitlines()` are string methods that return `list` types. 
