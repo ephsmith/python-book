@@ -256,8 +256,7 @@ print(x + y) # (1)!
 2. From the file browser, right-click the file and choose `Open with IDLE`
 
 !!! danger
-    Double-clicking a Python file in the file browser will cause the module to be 
-    executed in the background. 
+    Double-clicking a Python file in the file browser will cause the module to be executed in the background. 
 
 ### Learn Python with IDLE
 As you progress through the course, you will encounter many new
