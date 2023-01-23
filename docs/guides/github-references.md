@@ -46,7 +46,7 @@ GitHub provides access to all of this functionality via the
 !!! info
     Visit the GitHub guide to [Getting Started with GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop)
 
-## Accepting and Assignment
+## Accepting an Assignment
 In order to begin working on an assignment, students must accept an assignment 
 invitation link. The steps involved in accepting a link are as follows:
 
@@ -110,6 +110,37 @@ Cloning can be accomplished by several methods:
 !!! tip "Recommendation"
     Cloning your repo via GitHub Desktop is highly recommended when starting out. 
     Check out the GitHub [documentation on cloning](https://developer.apple.com/xcode/resources/).  
+
+### Browse the Repository with File Explorer
+Once you have cloned your repository, GitHub Desktop presents you with three options 
+in the main application pane:
+
+1. Open the repository in an IDE (Like PyCharm or VSCode)
+2. Open the repository with a File Browser (Windows Explorer for example)
+3. Open the repository on GitHub.  
+
+For editing files locally, choose the 2nd option. 
+
+### Edit Python Source Files
+A template Python file is present for every sub-part of any assignment.  These files 
+are located in the `src` directory of your repository. Use a file browser to navigate 
+to the source directory.   
+
+```text
+.
+├── README.md
+├── requirements.txt
+├── src     <---- Assignment templates are here
+└── tests
+```
+
+Any text editor can be used to modify Python source code since Python modules are plain 
+text files. It is better to use a Python-aware editor like the editor present in IDLE, 
+PyCharm or VS Code.  
+
+!!! danger
+    When opening a Python module for editing, *always right-click and choose Open With.
+..*. If you double-click a Python module, the operating system will run the file. 
 
 ### Commit Local Changes, Push to Submit to GitHub
 When you make progress on your assignment, it is best to commit those changes. When 
