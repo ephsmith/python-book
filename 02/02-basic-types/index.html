@@ -1,0 +1,1681 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://ephsmith.github.io/python-book/02/02-basic-types/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.0, mkdocs-material-8.5.7" name="generator"/>
+<title>Basic Types - Introductory Python</title>
+<link href="../../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25 0 0 1 .25-.25h5.025a.25.25 0 0 1 .177.073l6.25 6.25a.25.25 0 0 1 0 .354l-5.025 5.025a.25.25 0 0 1-.354 0l-6.25-6.25a.25.25 0 0 1-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.75 1.75 0 0 1 1 7.775zM6 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 0 1 .25-.25h8.5a.25.25 0 0 1 .25.25v7.736a.75.75 0 1 0 1.5 0V1.75A1.75 1.75 0 0 0 11.25 0h-8.5A1.75 1.75 0 0 0 1 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 0 0 0-1.5H2.75a.25.25 0 0 1-.25-.25V1.75zM4.75 4a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5zM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75zm11.774 3.537a.75.75 0 0 0-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 0 0-1.062 1.058l1.943 1.95a.75.75 0 0 0 1.055.008l4.557-4.45z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm6.5-.25A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75zM8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.489 4.489 0 0 1-.563-1.191 3.833 3.833 0 0 1-.05-2.063 4.636 4.636 0 0 1-2.025-.293.75.75 0 1 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.748.748 0 0 1 1.06 0 .75.75 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.404 2.404 0 0 1-.507-.441 3.063 3.063 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19a.753.753 0 0 1 .01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768a85.08 85.08 0 0 0-.317-.265c-.814-.68-1.75-1.462-2.692-2.619a3.74 3.74 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353V.75z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm9 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 0 1 9 6.25c0 .177-.04.264-.077.318a.956.956 0 0 1-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 0 0-.313.195 2.416 2.416 0 0 0-.692.661.75.75 0 0 0 1.248.832.956.956 0 0 1 .276-.245 6.3 6.3 0 0 1 .26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 0 0 8 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 1 0 1.342.67z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.404 12.596a6.5 6.5 0 1 1 9.192-9.192 6.5 6.5 0 0 1-9.192 9.192zM2.344 2.343a8 8 0 1 0 11.313 11.314A8 8 0 0 0 2.343 2.343zM6.03 4.97a.75.75 0 0 0-1.06 1.06L6.94 8 4.97 9.97a.75.75 0 1 0 1.06 1.06L8 9.06l1.97 1.97a.75.75 0 1 0 1.06-1.06L9.06 8l1.97-1.97a.75.75 0 1 0-1.06-1.06L8 6.94 6.03 4.97z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 0 0-.01.004L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.02.02 0 0 0-.004-.009.02.02 0 0 0-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.492 3.492 0 0 1 2.441 0l.999-1a.75.75 0 1 1 1.06 1.061l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.013 5.013 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.684 1.684 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06zM6.173 5h3.654A.173.173 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173zM5.25 6.5a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75h-5.5z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458L5 5.782zM9.5 2.5h-3V6a.75.75 0 0 1-.117.403L4.73 9h6.54L9.617 6.403A.75.75 0 0 1 9.5 6V2.5zm-6.9 9.847L3.775 10.5h8.45l1.175 1.847a.75.75 0 0 1-.633 1.153H3.233a.75.75 0 0 1-.633-1.153z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 2.5a.75.75 0 0 0 0 1.5h10.5a.75.75 0 0 0 0-1.5H1.75zm4 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zm0 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zM2.5 7.75a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0v-6z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/hint.min.css" rel="stylesheet"/>
+<link href="../../css/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QMGXXK5ZHY"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QMGXXK5ZHY",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QMGXXK5ZHY",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="amber" data-md-color-primary="cyan" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#introduction">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Introductory Python" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Introductory Python">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Introductory Python
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Basic Types
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="amber" data-md-color-media="" data-md-color-primary="cyan" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="amber" data-md-color-media="" data-md-color-primary="cyan" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ephsmith/python-book" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+</div>
+<div class="md-source__repository">
+    ephsmith/python-book
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Introductory Python" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Introductory Python">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Introductory Python
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ephsmith/python-book" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+</div>
+<div class="md-source__repository">
+    ephsmith/python-book
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/">
+        About
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          Book
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Book" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Book
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01/01-why-python/">
+        1. Why Python?
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2">
+          2. First Steps with Python
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="2. First Steps with Python" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+          2. First Steps with Python
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-setting-up-python/">
+        Setting up Python
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Basic Types
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Basic Types
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+    Introduction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#built-in-atomic-types">
+    Built-in Atomic Types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#built-in-non-atomic-types">
+    Built-in Non-Atomic Types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#determining-a-variables-type">
+    Determining a Variable's Type
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#text-type-str">
+    Text Type: str
+  </a>
+<nav aria-label="Text Type: str" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-variables">
+    Literals and Variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-str-function">
+    The str() Function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-operations">
+    Basic Operations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#numeric-types">
+    Numeric Types
+  </a>
+<nav aria-label="Numeric Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-variables_1">
+    Literals and Variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#special-literal-formatting">
+    Special Literal Formatting
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-int-function">
+    The int() Function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-float-function">
+    The float() function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#type-checks">
+    Type Checks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-operations_1">
+    Basic Operations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boolean-type-bool">
+    Boolean Type: bool
+  </a>
+<nav aria-label="Boolean Type: bool" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-variables_2">
+    Literals and Variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-bool-function">
+    The bool() Function
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nonetype-type">
+    NoneType Type
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequence-types">
+    Sequence Types
+  </a>
+<nav aria-label="Sequence Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-types">
+    List Types
+  </a>
+<nav aria-label="List Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-list-function">
+    The list() Function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inspecting-length">
+    Inspecting Length
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#accessing-list-items">
+    Accessing List Items
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-items-by-index">
+    List Items by Index
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lists-in-a-for-loop">
+    Lists in a for Loop
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-item-assignment">
+    List Item Assignment
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuple-types">
+    Tuple Types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuples-are-immutable">
+    Tuples are Immutable
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuples-are-lightweight">
+    Tuples are Lightweight
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-tuple-function">
+    The tuple() Function
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#range-types">
+    Range Types
+  </a>
+<nav aria-label="Range Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-variables_3">
+    Literals and Variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#range-objects-are-lazy">
+    Range Objects are Lazy
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dictionary-types">
+    Dictionary Types
+  </a>
+<nav aria-label="Dictionary Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-values">
+    Literals and Values
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-dict-function">
+    The dict() Function
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-types">
+    Set Types
+  </a>
+<nav aria-label="Set Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-values_1">
+    Literals and Values
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-set-function">
+    The set() Function
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#style-notes">
+    Style Notes
+  </a>
+<nav aria-label="Style Notes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#string-delimiters">
+    String Delimiters
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequences">
+    Sequences
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spaces-after">
+    Spaces After :
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+    Summary
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-links">
+    Related Links
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-python-typing/">
+        Python Typing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-essential-built-ins/">
+        Essential Built-Ins
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-handling-errors/">
+        Handling Errors
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3">
+          3. Strings
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="3. Strings" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+          3. Strings
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03/03-strings/">
+        Strings and String Methods
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03/03-long-strings/">
+        Long String Literals
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          References and Guides
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="References and Guides" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          References and Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guides/github-references/">
+        GitHub
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guides/python-naming-rules-conventions/">
+        Rules and Conventions for Names
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guides/style-guidelines/">
+        Style Guidelines
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+    Introduction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#built-in-atomic-types">
+    Built-in Atomic Types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#built-in-non-atomic-types">
+    Built-in Non-Atomic Types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#determining-a-variables-type">
+    Determining a Variable's Type
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#text-type-str">
+    Text Type: str
+  </a>
+<nav aria-label="Text Type: str" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-variables">
+    Literals and Variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-str-function">
+    The str() Function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-operations">
+    Basic Operations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#numeric-types">
+    Numeric Types
+  </a>
+<nav aria-label="Numeric Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-variables_1">
+    Literals and Variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#special-literal-formatting">
+    Special Literal Formatting
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-int-function">
+    The int() Function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-float-function">
+    The float() function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#type-checks">
+    Type Checks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-operations_1">
+    Basic Operations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boolean-type-bool">
+    Boolean Type: bool
+  </a>
+<nav aria-label="Boolean Type: bool" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-variables_2">
+    Literals and Variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-bool-function">
+    The bool() Function
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nonetype-type">
+    NoneType Type
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequence-types">
+    Sequence Types
+  </a>
+<nav aria-label="Sequence Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-types">
+    List Types
+  </a>
+<nav aria-label="List Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-list-function">
+    The list() Function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inspecting-length">
+    Inspecting Length
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#accessing-list-items">
+    Accessing List Items
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-items-by-index">
+    List Items by Index
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lists-in-a-for-loop">
+    Lists in a for Loop
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-item-assignment">
+    List Item Assignment
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuple-types">
+    Tuple Types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuples-are-immutable">
+    Tuples are Immutable
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuples-are-lightweight">
+    Tuples are Lightweight
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-tuple-function">
+    The tuple() Function
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#range-types">
+    Range Types
+  </a>
+<nav aria-label="Range Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-variables_3">
+    Literals and Variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#range-objects-are-lazy">
+    Range Objects are Lazy
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dictionary-types">
+    Dictionary Types
+  </a>
+<nav aria-label="Dictionary Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-values">
+    Literals and Values
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-dict-function">
+    The dict() Function
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-types">
+    Set Types
+  </a>
+<nav aria-label="Set Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#literals-and-values_1">
+    Literals and Values
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-set-function">
+    The set() Function
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#style-notes">
+    Style Notes
+  </a>
+<nav aria-label="Style Notes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#string-delimiters">
+    String Delimiters
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequences">
+    Sequences
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spaces-after">
+    Spaces After :
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+    Summary
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-links">
+    Related Links
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/ephsmith/python-book/edit/main/docs/02/02-basic-types.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1>Basic Types</h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>In software programming data types are an important concept. Python programs can 
+operate on a variety of types of data.  Different types are handled differently in a 
+Python program so it is important to understand the basic types that Python provides.</p>
+<p>Python data types fall into two categories: </p>
+<ul>
+<li>simple or atomic data types: can not be decomposed into a collection of another type</li>
+<li>non-atomic data types: are composed of other types</li>
+</ul>
+<p>Here each of the following types will be covered along with elementary operations that 
+can be performed on them. Later chapters provide more detailed coverage and examples 
+for each type.</p>
+<h2 id="built-in-atomic-types">Built-in Atomic Types<a class="headerlink" href="#built-in-atomic-types" title="Permanent link">¶</a></h2>
+<p>Python has the following bult-in atomic types:</p>
+<ul>
+<li>Text type: <code>str</code></li>
+<li>Numeric types: <code>int</code>, <code>float</code>, <code>complex</code></li>
+<li>Boolean type: <code>bool</code></li>
+<li>None Type: <code>NoneType</code></li>
+</ul>
+<h2 id="built-in-non-atomic-types">Built-in Non-Atomic Types<a class="headerlink" href="#built-in-non-atomic-types" title="Permanent link">¶</a></h2>
+<ul>
+<li>Sequences: <code>list</code>, <code>tuple</code>, <code>range</code></li>
+<li>Mappings: <code>dict</code></li>
+<li>Sets: <code>set</code>, <code>frozenset</code></li>
+<li>Binary Types: <code>bytes</code>, <code>bytearray</code></li>
+</ul>
+<h2 id="determining-a-variables-type">Determining a Variable's Type<a class="headerlink" href="#determining-a-variables-type" title="Permanent link">¶</a></h2>
+<p>There are two common methods to determine the type of a variable.  When using the 
+interactive Python shell, the <code>type()</code> function is the quickest way to check the type 
+of a variable or a value returned from a function/operation.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span>
+<span class="nb">str</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">int</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mf">100.100</span><span class="p">)</span>
+<span class="nb">float</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">bool</span>
+</code></pre></div>
+<p>If the type check is being performed in a program, it is often preferable to use the 
+<code>isinstance()</code> function. This function operates a bit differently, but has the added 
+benefit of returning a <code>bool</code> (<code>True</code> or <code>False</code>) value which can be used to 
+programmatically determine how to handle the data in a program. </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">message</span> <span class="o">=</span> <span class="s1">'Assignment Complete!'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">length</span> <span class="o">=</span> <span class="mf">10.5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="kc">True</span>
+</code></pre></div>
+<p>Type checks such as these are useful when we want to account for problems that occur 
+at runtime or when we simply want to operate on differnt types in different ways. </p>
+<p>To summarize, use <code>type()</code> for interactive variable type checks and use <code>isinstance()</code> 
+when checking the type in a program.</p>
+<h2 id="text-type-str">Text Type: <code>str</code><a class="headerlink" href="#text-type-str" title="Permanent link">¶</a></h2>
+<p>Many other languages have multiple text types. In C++, for example, strings are 
+non-atomic compositions of an atomic character type. Python differs in this regard. 
+<em>The only text type in Python is the <code>str</code> type.</em> </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>bytes</code> type is commonly used to store text that is transmitted over a 
+communication interface, but this is not technically a text type. In fact, <code>bytes</code> 
+objects must be decoded to convert them to strings.</p>
+</div>
+<h3 id="literals-and-variables">Literals and Variables<a class="headerlink" href="#literals-and-variables" title="Permanent link">¶</a></h3>
+<p>A <strong>literal</strong> is an actual value of a certain type that is included in our code. 
+String literals are entered as characters, surrounded by (delimited with) single or 
+double quotes.</p>
+<p>The following simple program includes some string literal examples.</p>
+<div class="highlight"><span class="filename">string_examples.py</span><pre><span></span><code><span class="n">country_code</span> <span class="o">=</span> <span class="s1">'CA'</span> <span class="c1">#  (1)!</span>
+<span class="n">product_code</span> <span class="o">=</span> <span class="s2">"EZ123"</span>  <span class="c1"># (2)!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">country_code</span><span class="p">,</span> <span class="n">product_code</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li><code>CA</code> is a string literal.</li>
+<li><code>EZ123</code> is also a string literal.</li>
+</ol>
+<p>When we run this program, the following is printed to the screen.</p>
+<div class="highlight"><pre><span></span><code><span class="n">CA</span> <span class="n">EZ123</span>
+</code></pre></div>
+<p>To create a string variable, assign a string literal to a name using the assignment 
+operator <code>=</code>.  In the program above, <code>country_code</code> and <code>product_code</code> are both string 
+variables because they have <code>str</code> types assigned to them. We can verify this</p>
+<ol>
+<li>save the code above to a Python module named <code>string_examples.py</code> and run it using 
+   <abbr title="Integrated Development and Learning Environment">IDLE</abbr>. </li>
+<li>Type the following lines of code at the prompt in the Python shell. </li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">country_code</span><span class="p">)</span>
+<span class="nb">str</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">product_code</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="kc">True</span>
+</code></pre></div>
+<h3 id="the-str-function">The <code>str()</code> Function<a class="headerlink" href="#the-str-function" title="Permanent link">¶</a></h3>
+<p>The <code>str()</code> function can be used to:</p>
+<ul>
+<li>create an empty string: <code>str()</code> with no arguments yields <code>''</code>. </li>
+<li>convert a compatible type to a string. Example: <code>str(5)</code> yields <code>"5"</code></li>
+</ul>
+<h3 id="basic-operations">Basic Operations<a class="headerlink" href="#basic-operations" title="Permanent link">¶</a></h3>
+<p>Some basic string operations include:</p>
+<ul>
+<li>concatenation</li>
+<li>repetition</li>
+</ul>
+<p>The following code sample demonstrates these to common string operations.</p>
+<div class="highlight"><span class="filename">string_examples.py</span><pre><span></span><code><span class="n">first_name</span> <span class="o">=</span> <span class="s2">"Isaiah"</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s2">"Thomas"</span>
+<span class="n">full_name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">last_name</span>  <span class="c1">#  (1)!</span>
+<span class="n">border</span> <span class="o">=</span> <span class="s2">"#"</span> <span class="o">*</span> <span class="mi">20</span>  <span class="c1"># (2)!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">border</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">border</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li><strong>Concatenation</strong>: The <code>+</code> operator is used to concatenate strings.</li>
+<li><strong>Repetition</strong>: The <code>*</code> operator is used for string repetition.</li>
+</ol>
+<p>When <code>string_examples.py</code> above is run, the following is printed to the Python shell:</p>
+<div class="highlight"><span class="filename">string_examples.py output</span><pre><span></span><code><span class="go">####################</span>
+<span class="go">Isaiah Thomas</span>
+<span class="go">####################</span>
+</code></pre></div>
+<p>Strings can be concatenated using the <code>+</code> operator. Note that this is 
+both operands must be <code>str</code> types. </p>
+<p>The <code>*</code> is an interesting case where mixed types are allowed as operands. Repetition 
+expressions are only allowed with <code>str</code> and <code>int</code> types. Attempting to use a <code>float</code> 
+will result in an error.</p>
+<p>This completes a basic introduction to string types. More detail will be provided in 
+later chapters.</p>
+<h2 id="numeric-types">Numeric Types<a class="headerlink" href="#numeric-types" title="Permanent link">¶</a></h2>
+<p>Python has three built-in atomic numeric types.  This text focuses on <code>int</code> and 
+<code>float</code> types. </p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Literal Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td>Integer type</td>
+<td><code>1</code>, <code>-200</code>, <code>7_654_321</code></td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>Float type</td>
+<td><code>1.11</code>, <code>-200.0</code>, <code>1_234_567.8</code></td>
+</tr>
+<tr>
+<td><code>complex</code></td>
+<td>Complex type</td>
+<td><code>1 + 1j</code>, <code>2.2 + 5j</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="literals-and-variables_1">Literals and Variables<a class="headerlink" href="#literals-and-variables_1" title="Permanent link">¶</a></h3>
+<p>Just as with <code>str</code> types, we need to be aware of how to enter literal values for 
+numeric types. The table above provides examples literals for each numeric type. 
+Creating a variable from any of these types is accomplished the same way as with 
+strings.  We use the assignment operator <code>=</code>.  The following code assigns some numeric 
+literals to names.  When you run this code in <abbr title="Integrated Development and Learning Environment">IDLE</abbr>, you can run type checks on the 
+variables using the Python shell.</p>
+<div class="highlight"><span class="filename">numeric_examples.py</span><pre><span></span><code><span class="n">product_count</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">product_weight</span> <span class="o">=</span> <span class="mf">22.3</span>
+</code></pre></div>
+<h3 id="special-literal-formatting">Special Literal Formatting<a class="headerlink" href="#special-literal-formatting" title="Permanent link">¶</a></h3>
+<p>Python numeric types allow the use of underscores (<code>_</code>) as thousands separators.  This 
+can be helpful with large values with many repeated digits. Python <code>float</code> types allow 
+the use of standard exponential notation for representing very large and very small 
+numbers.  The following examples demonstrate these helpful formats.</p>
+<div class="highlight"><pre><span></span><code><span class="n">a_very_large_int</span> <span class="o">=</span> <span class="mi">1_000_000_000_000</span>
+<span class="n">a</span> <span class="n">very_large_float</span> <span class="o">=</span> <span class="mf">1_000.000_123_123</span>
+<span class="n">one_thousand</span> <span class="o">=</span> <span class="mf">1e3</span> 
+<span class="n">one_thousandth</span> <span class="o">=</span> <span class="mf">1E-3</span>
+</code></pre></div>
+<h3 id="the-int-function">The <code>int()</code> Function<a class="headerlink" href="#the-int-function" title="Permanent link">¶</a></h3>
+<p>This function can be used to:</p>
+<ul>
+<li>create a zero-valued <code>int</code>. Example: <code>int()</code> yields <code>0</code>.</li>
+<li>convert a compatible type to an <code>int</code> type. Example: <code>int("10")</code> yields an <code>int</code> <code>10</code>.</li>
+</ul>
+<p>The following example demonstrates a basic <code>int</code> conversion. Note that <code>age_in_months</code> 
+could be defined initially as an <code>int</code>. It is defined first as a string here for 
+demonstration purposes. </p>
+<div class="highlight"><span class="filename">numeric_examples.py</span><pre><span></span><code><span class="n">MONTHS_PER_YEAR</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">"Phoenix"</span>
+<span class="n">age_in_months</span> <span class="o">=</span> <span class="s2">"12"</span>
+
+<span class="c1"># convert age_in_months to a int</span>
+<span class="n">age_in_months</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age_in_months</span><span class="p">)</span>
+<span class="n">age_in_years</span> <span class="o">=</span> <span class="n">age_in_months</span> <span class="o">/</span> <span class="n">MONTHS_PER_YEAR</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">age_in_months</span><span class="si">}</span><span class="s1"> months (or </span><span class="si">{</span><span class="n">age_in_years</span><span class="si">}</span><span class="s1"> years) old!'</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="the-float-function">The <code>float()</code> function<a class="headerlink" href="#the-float-function" title="Permanent link">¶</a></h3>
+<p>This function is used to:</p>
+<ul>
+<li>create a zero-valued <code>float</code> type. Example: <code>float()</code> yields <code>0.0</code> (a <code>float</code> type).</li>
+<li>convert a compatible type to <code>float</code>. Example: <code>float("1.234")</code> yields <code>1.234</code>. </li>
+</ul>
+<h3 id="type-checks">Type Checks<a class="headerlink" href="#type-checks" title="Permanent link">¶</a></h3>
+<p>The Python shell session excerpt below demonstrates type checks on numeric types.  The 
+pattern is the same regardless of the type.  We just supply the correct arguments to 
+the <code>type()</code> and <code>isinstance()</code> functions.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">product_count</span><span class="p">)</span>
+<span class="nb">int</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">product_weight</span><span class="p">)</span>
+<span class="nb">float</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">product_count</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">product_weight</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="kc">True</span>
+</code></pre></div>
+<p>We will explore methods and operations with numeric types in the coming chapters. For 
+now, we continue our survey of basic Python types with the Boolean type <code>bool</code>.</p>
+<h3 id="basic-operations_1">Basic Operations<a class="headerlink" href="#basic-operations_1" title="Permanent link">¶</a></h3>
+<p>Basic operations for numeric types were covered in the <a href="../02-setting-up-python/#use-python-as-a-calculator">Use Python as a Calculator</a>
+section. Operations on numeric types can have mixed numeric operands.  For example we 
+can add an <code>int</code> to a <code>float</code>. In such cases, the result type will be that of the 
+<code>type</code> with higher precision--<code>float</code> in the case of an <code>int</code>-<code>float</code> operation.</p>
+<h2 id="boolean-type-bool">Boolean Type: <code>bool</code><a class="headerlink" href="#boolean-type-bool" title="Permanent link">¶</a></h2>
+<p>The boolean type <code>bool</code> is a special type in Python that is used for representing one 
+of two values: <code>True</code> and <code>False</code>. These are a special type in Python because they can 
+also be used in any expression where an <code>int</code> type is allowed. This is because the 
+<code>bool</code> type is implemented as a subclass of <code>int</code> in Python. <em>We know how to test this</em>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="kc">True</span>
+</code></pre></div>
+<h3 id="literals-and-variables_2">Literals and Variables<a class="headerlink" href="#literals-and-variables_2" title="Permanent link">¶</a></h3>
+<p>The previous example demonstrated a few things.  We can see <code>bool</code> literals <code>True</code> and 
+<code>False</code> in the <code>isinstance()</code> checks. We also see that <code>bool</code> types are both <code>int</code> and 
+<code>bool</code>.  When a <code>bool</code> type is interpreted as an <code>int</code>, <code>True</code> is <code>1</code> and <code>False</code> is 
+<code>0</code>.  We can see this in action if we introduce a new function--<code>int()</code>.  </p>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">0</span>
+</code></pre></div>
+<p>Values of type <code>bool</code> can be assigned to a name just like any other type in Python. </p>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">product_in_stock</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">product_is_back_ordered</span> <span class="o">=</span> <span class="kc">True</span> 
+</code></pre></div>
+<p>We will see <code>bool</code> types again when we cover decision making in Python. </p>
+<h3 id="the-bool-function">The <code>bool()</code> Function<a class="headerlink" href="#the-bool-function" title="Permanent link">¶</a></h3>
+<p>This function is used to:</p>
+<ul>
+<li>create a False valued <code>bool</code> type. Example: <code>bool()</code> yields <code>False</code>.</li>
+<li>convert a compatible type to a <code>bool</code> type. <code>bool(1)</code> yields <code>True</code>.</li>
+<li>interpret a Python object as a boolean (True or False)</li>
+</ul>
+<p>The third bullet above requires a bit more explanation.  In general, Python considers 
+any 0 value to be False.  Non-numeric types are interpreted differently.  A 
+zero-valued string, for example, has no characters. For built-in types, the value 
+returned by the function associated with the type is considered as False.</p>
+<p>The following list has some example of boolean interpretation of non-numeric types. </p>
+<ul>
+<li>empty strings: <code>False</code></li>
+<li>empty lists or tuples: <code>False</code></li>
+<li>non-empty string, list, or tuple: <code>True</code> </li>
+</ul>
+<h2 id="nonetype-type"><code>NoneType</code> Type<a class="headerlink" href="#nonetype-type" title="Permanent link">¶</a></h2>
+<p>This is a special type in Python. More accurately, there is only one instance of this type
+stored in memory in a Python program as <code>None</code>.  It is used to represent the absence 
+of a value. This type is used as:</p>
+<ul>
+<li>default arguments in functions</li>
+<li>to check the return (or absence of a return) value from a function</li>
+<li>an explicit value returned form a function to signal information to the caller</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Always use the <code>is</code> keyword when making comparisons to <code>None</code>.  Example <code>if name is 
+None...</code>.  </p>
+</div>
+<h2 id="sequence-types">Sequence Types<a class="headerlink" href="#sequence-types" title="Permanent link">¶</a></h2>
+<p>A Python sequence is an ordered collection of items which can be accessed by index 
+number. The length of any sequence can be determined by passing it to the <code>len()</code> 
+function which is introduced in this section. Note that <code>str</code> types are <em>also</em> 
+sequence types. </p>
+<p>In addition to lists and tuples, string and bytes types are also sequences. This 
+section focuses on:</p>
+<ul>
+<li>list type: <code>list</code></li>
+<li>tuple type: <code>tuple</code></li>
+</ul>
+<h3 id="list-types">List Types<a class="headerlink" href="#list-types" title="Permanent link">¶</a></h3>
+<p>A Python list is an ordered collection of Python objects.  List can hold any 
+type--even other lists.  To define a list using a literal, surround a comma-separated 
+list of object with square brackets: <code>[ ]</code>. </p>
+<div class="highlight"><span class="filename">list_examples.py</span><pre><span></span><code><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># (1)!</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span> <span class="c1"># (2)!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>       <span class="c1"># (3)!</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>         <span class="c1"># (4)!</span>
+</code></pre></div>
+<ol>
+<li>The <code>list</code> literal here is a sequence of numbers, separated by commas and 
+   surrounded by a pair of square brackets.</li>
+<li>When inspecting type from a Python module, we need to use the <code>print()</code> function to 
+   actually see it in the shell output.</li>
+<li>We can use <code>print()</code> on lists to see a literal representation of the variable.</li>
+<li>Pass any sequence to the <code>len()</code> function to get the number of items stored. </li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="go">&gt;&gt;&gt;</span>
+<span class="go">list</span>
+<span class="go">[1, 2, 3]</span>
+<span class="go">4</span>
+</code></pre></div>
+<h4 id="the-list-function">The list() Function<a class="headerlink" href="#the-list-function" title="Permanent link">¶</a></h4>
+<p>As with other types, the <code>list()</code> function, called with no arguments, returns an 
+<em>empty</em> list. When called with a compatible argument, the input argument is converted 
+to a list. The following examples demonstrate.</p>
+<div class="highlight"><span class="filename">list_examples.py</span><pre><span></span><code><span class="n">empty</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>                 <span class="c1"># (1)! </span>
+<span class="n">message</span> <span class="o">=</span> <span class="s1">'Hello'</span>              
+<span class="n">letters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>        <span class="c1"># (2)!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">empty</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>Calling <code>list()</code> with no arguments creates an empty list <code>[]</code>. </li>
+<li>Calling <code>list()</code> on a <code>str</code> type will create a list where each item is a single 
+   character from the source string.</li>
+</ol>
+<p>Running <code>list_examples.py</code> produces the following output in the console.</p>
+<div class="highlight"><pre><span></span><code><span class="go">[]</span>
+<span class="go">['H', 'e', 'l', 'l', 'o']</span>
+</code></pre></div>
+<h4 id="inspecting-length">Inspecting Length<a class="headerlink" href="#inspecting-length" title="Permanent link">¶</a></h4>
+<p>The <strong>length</strong> of a sequence is equivalent to the number of items stored in the 
+sequence.  Pass a list (or any other sequence) to the <code>len()</code> function to see how many 
+items are currently stored in the list. </p>
+<h4 id="accessing-list-items">Accessing List Items<a class="headerlink" href="#accessing-list-items" title="Permanent link">¶</a></h4>
+<p>There are multiple ways to access list items.  The two most ways to access list items 
+are by index and with list iteration in a <code>for</code> loop. </p>
+<h4 id="list-items-by-index">List Items by Index<a class="headerlink" href="#list-items-by-index" title="Permanent link">¶</a></h4>
+<p>The items in a sequence are stored in the order in which they were defined. An index 
+value can be used to access each of the stored items.  In Python, index values start 
+from <code>0</code>.  For the <code>nums</code> variable defined above, the indices are <code>0, 1, 2</code>.  Note 
+that <code>nums</code> stores 3 items.  Since the index starts at <code>0</code>, the max index is actually 
+<code>len(nums) - 1</code> or 2. </p>
+<table>
+<thead>
+<tr>
+<th><code>nums</code></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>item value</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>When you access an item by index, the value is returned.  This value can be used like 
+any other value in Python. The following example demonstrates basic index access. </p>
+<div class="highlight"><span class="filename">list_examples.py</span><pre><span></span><code><span class="n">city_state</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Memphis'</span><span class="p">,</span> <span class="s1">'TN'</span><span class="p">]</span>
+<span class="n">city</span> <span class="o">=</span> <span class="n">city_state</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">city_state</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">city_state_string</span> <span class="o">=</span> <span class="n">city</span> <span class="o">+</span> <span class="s1">','</span> <span class="o">+</span> <span class="n">state</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">city_state_string</span><span class="p">)</span>
+</code></pre></div>
+<p>When we run <code>list_examples.py</code> now, the following is output to the shell:</p>
+<div class="highlight"><pre><span></span><code><span class="go">Memphis, TN</span>
+</code></pre></div>
+<h4 id="lists-in-a-for-loop">Lists in a for Loop<a class="headerlink" href="#lists-in-a-for-loop" title="Permanent link">¶</a></h4>
+<p>Lists are commonly used to store similar items.  Similar items are often processed 
+similarly in a program.  Python <code>for</code> loops provide an efficient way to access and 
+process every item in a list. </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>        <span class="c1"># (1)!</span>
+    <span class="n">squared</span> <span class="o">=</span> <span class="n">num</span> <span class="o">**</span> <span class="mi">2</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="n">squared</span><span class="p">)</span>   
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>The membership expression <code>num in nums</code> will extract one element from <code>nums</code> and 
+   assign it to <code>num</code> on each loop run.</li>
+</ol>
+<p>The first line in the <code>for</code> loop (line 3) instructs the loop to:</p>
+<ol>
+<li>extract one item at a time from <code>nums</code></li>
+<li>assign it to <code>num</code> </li>
+<li>run the loop body (lines 4-5).</li>
+</ol>
+<p>This process is referred to as <strong>iteration</strong>.  Here, we are iterating over the items 
+in <code>nums</code>. Python types that support iteration in this way are called <strong>iterables</strong>. 
+Lists are iterables. </p>
+<h4 id="list-item-assignment">List Item Assignment<a class="headerlink" href="#list-item-assignment" title="Permanent link">¶</a></h4>
+<p>Python <code>list</code> types <em>support item assignment</em>. This means that we modify the items in a 
+list. For example, if we want to shift all of the values in <code>nums</code> by a constant, we 
+can do the following in a loop.  Note that we make use of the <code>range()</code> function to 
+get a sequence of index values.</p>
+<div class="highlight"><span class="filename">list_examples.py</span><pre><span></span><code><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">offset_value</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>            <span class="c1"># (1)!</span>
+    <span class="n">nums</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">offset_value</span>  <span class="c1"># (2)!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li><code>range(len(nums))</code> is the same as <code>range(3)</code>.  This will provide the sequence 0, 1, 
+   2 which is used in the loop to access the items by index.</li>
+<li>Here, one item is accessed by index per loop run. The <code>offset_value</code> is added to 
+   each and then assigned back to the list item.  This is <em>item assignment</em>.</li>
+</ol>
+<h3 id="tuple-types">Tuple Types<a class="headerlink" href="#tuple-types" title="Permanent link">¶</a></h3>
+<p>The section on lists demonstrated a number of features of sequence types in Python.<br/>
+Sequence types support use of the <code>len()</code> function for determining length, <em>indexing</em> 
+for accessing items.  Sequence types also support iteration. Tuples are another 
+sequence type that has these same features. Tuples are quite similar to lists. There 
+are two differences:</p>
+<ul>
+<li>use <code>( )</code> instead of square brackets to define a <code>tuple</code></li>
+<li><code>tuple</code> type variables <em>do not support</em> item assignment. </li>
+</ul>
+<p>The following table provides a comparison of tuples and lists:</p>
+<table>
+<thead>
+<tr>
+<th>feature</th>
+<th><code>list</code></th>
+<th><code>tuple</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index access</td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m0-5H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"></path></svg></span></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m0-5H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"></path></svg></span></td>
+</tr>
+<tr>
+<td>len()</td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m0-5H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"></path></svg></span></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m0-5H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"></path></svg></span></td>
+</tr>
+<tr>
+<td>iteration</td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m0-5H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"></path></svg></span></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m0-5H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"></path></svg></span></td>
+</tr>
+<tr>
+<td>item assignment</td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m0-5H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"></path></svg></span></td>
+<td><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.72 5.72a.75.75 0 0 1 1.06 0L12 10.94l5.22-5.22a.75.75 0 1 1 1.06 1.06L13.06 12l5.22 5.22a.75.75 0 1 1-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 0 1-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 0 1 0-1.06z" fill-rule="evenodd"></path></svg></span></td>
+</tr>
+</tbody>
+</table>
+<p>Tuples <em>do not support item assignment.</em>  Attempting to change an item stored in a 
+tuple will lead to an error. Try the following in the Python shell:</p>
+<div class="highlight"><span class="filename">Tuples do not support item assignment</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">nums</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>   <span class="c1"># (1)!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">11</span>       <span class="c1"># (2)!</span>
+<span class="go">TypeError                                 Traceback (most recent call last)</span>
+<span class="go">Input In [122], in &lt;cell line: 1&gt;()</span>
+<span class="go">----&gt; 1 nums[0] = 11</span>
+
+<span class="go">TypeError: 'tuple' object does not support item assignment</span>
+</code></pre></div>
+<ol>
+<li>Create a <code>tuple</code> containing 1, 2, and 3.</li>
+<li>Attempt to assign <code>11</code> to the item at index <code>0</code>.  </li>
+</ol>
+<p>Whenever you see a <code>does not support item assignment</code> error, it means that the data 
+type you are using does not support item assignment: <code>str</code> and <code>tuple</code> are two such 
+types.</p>
+<h3 id="tuples-are-immutable">Tuples are Immutable<a class="headerlink" href="#tuples-are-immutable" title="Permanent link">¶</a></h3>
+<p>Tuples do not support item assignment.  This means that once a tuple is defined, it 
+can not be modified.  This is an essential feature of tuples called immutability. That 
+is to say: tuples are immutable. This is very useful in programs where you need to 
+pass data to functions with the assurance that the data will not be modified during 
+the program run. </p>
+<h3 id="tuples-are-lightweight">Tuples are Lightweight<a class="headerlink" href="#tuples-are-lightweight" title="Permanent link">¶</a></h3>
+<p>Tuples require less program memory than lists making tuples a great data type to 
+consider when optimizing a program for performance.  </p>
+<h3 id="the-tuple-function">The <code>tuple()</code> Function<a class="headerlink" href="#the-tuple-function" title="Permanent link">¶</a></h3>
+<p>This function is used to:</p>
+<ul>
+<li>create an empty <code>tuple</code>. Note: this is not very useful accept for comparisons.</li>
+<li>convert a compatible type to <code>tuple</code>. Example: <code>tuple('abc')</code> yields <code>('a', 'b' 'c')</code></li>
+</ul>
+<h2 id="range-types">Range Types<a class="headerlink" href="#range-types" title="Permanent link">¶</a></h2>
+<p>Python's <code>range()</code> type is a type that has a very specific purpose--producing a 
+uniform sequence of integers. Like <code>tuples</code> the <code>range</code> sequences are immutable.<br/>
+A range type object is created differently compared to other types in Python but they 
+are indeed a sequence type. </p>
+<h3 id="literals-and-variables_3">Literals and Variables<a class="headerlink" href="#literals-and-variables_3" title="Permanent link">¶</a></h3>
+<p>Range types are created by calling the <code>range()</code> function with a list of arguments 
+that specify the desired sequence range and step. The call signature for the range 
+function is:</p>
+<div class="no-copy highlight"><pre><span></span><code>range(stop)  # or ...
+range(start, stop, [step])
+</code></pre></div>
+<p>There are a few different variations on calling range that we need to be aware of to 
+use it with master:</p>
+<ul>
+<li>If called with <code>stop</code> only, <code>range()</code> will return a sequence <code>0, 1, 2, ..., 
+stop-1</code>.  Note that <code>stop</code> is not included in the sequence.</li>
+<li>If called with <code>start</code> and <code>stop</code> (<code>step</code> is optional), then the sequence <code>1, 2, ...,
+  stop-1</code> is returned.</li>
+<li>When called with all 3 parameters, the <code>step</code> argument is the interval between 
+  successive elements in the sequence. </li>
+</ul>
+<p>The following examples show a few example ranges:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>           <span class="c1"># (1)!</span>
+<span class="c1"># 0, 1, 2, 3, 4</span>
+
+<span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>        <span class="c1"># (2)!</span>
+<span class="c1"># 1, 2, 3, 4</span>
+
+<span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># (3)!</span>
+<span class="c1"># 1, 3</span>
+
+<span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># (4)!</span>
+<span class="c1"># 0, -1, -2, -3, -4</span>
+
+<span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># (5)!</span>
+<span class="c1"># 0, -2, -4</span>
+</code></pre></div>
+<ol>
+<li>Calling <code>range()</code> with <code>stop</code> only results in a sequence that starts at 0.</li>
+<li>Specify <code>start</code> to start at a value other than 0.</li>
+<li>Specify the optional <code>step</code> argument to specify the interval between successive 
+   sequence elements.</li>
+<li><code>step</code> can be negative. The results in descending order sequence.</li>
+<li>The <code>stop</code> argument is still not included in descending sequences.</li>
+</ol>
+<p>If you try to inspect a <code>range</code> type in the Python shell, you will see the function 
+call needed to recreate the <code>range</code> object you are inspecting.  In other words, the 
+<em>literal</em> representation of a <code>range</code> type is the function call that creates it.  Try 
+running the following line in the Python shell:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+</code></pre></div>
+<p>You should see the output <code>range(1, 11)</code>. </p>
+<p>Range objects can be assigned a names like any other type.  Therefore the following 
+works.  We can even check the type like any other type. Try running the following 
+lines one at a time in a shell to avoid the need to add <code>print()</code> calls.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">my_sequence</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">my_sequence</span><span class="p">)</span>
+<span class="nb">isinstance</span><span class="p">(</span><span class="n">my_sequence</span><span class="p">,</span> <span class="nb">range</span><span class="p">)</span>
+</code></pre></div>
+The output <em>when run from the shell</em> is:</p>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">my_sequence</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_sequence</span><span class="p">)</span>
+<span class="go">range</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">my_sequence</span><span class="p">,</span> <span class="nb">range</span><span class="p">)</span>
+<span class="go">True</span>
+</code></pre></div>
+<h3 id="range-objects-are-lazy">Range Objects are Lazy<a class="headerlink" href="#range-objects-are-lazy" title="Permanent link">¶</a></h3>
+<p>Range objects do not immediately evaluate and return a sequence. This is why we see 
+<code>range(10, 101, 10)</code> when we inspect the variable <code>my_sequence</code> above.  Why is this so?
+Well, imagine you defined this range:</p>
+<p><div class="highlight"><span class="filename">range_examples.py</span><pre><span></span><code><span class="n">big_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10_000_000_000</span><span class="p">)</span>  <span class="c1"># 10 billion integers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">big_range</span><span class="p">)</span>
+</code></pre></div>
+Your computer would need to come up with enough free memory to store 10 billion 
+integers--an estimated 40 GB.  This is an unreasonable amount of space for a sequence 
+that may only be used in a <code>for</code> loop. Range objects evaluate the next item in the 
+sequence when it is needed (lazy iteration/evaluation). This way, you can loop through 
+the range 0 to 10 billion without the memory overhead.</p>
+<p>We can coerce a <code>range</code> object into another sequence (eager evaluation) by using <code>list
+()</code> or <code>tuple()</code>.  The following example demonstrates:</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_sequence</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_sequence</span><span class="p">)</span>
+</code></pre></div>
+<p>Which outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="dictionary-types">Dictionary Types<a class="headerlink" href="#dictionary-types" title="Permanent link">¶</a></h2>
+<p>Mapping types are referred to as Dictionaries in the Python vernacular.  In Python 
+mappings are implemented by the <code>dict</code> type. Mappings map lookup <em>keys</em> to <em>values</em> in a 
+one-to-one, directional relationship. This is similar to dictionaries used for 
+language.  When we look up a word in glossary or dictionary, we locate the definition. 
+In this analogy, the words are keys and the definitions are values. </p>
+<p>We can create our own language dictionary using a <code>dict</code> in Python. Here, the 
+definitions are shortened from the <a href="https://www.oed.com">Oxford English Dictionary</a>. </p>
+<div class="highlight"><span class="filename">dict_examples.py</span><pre><span></span><code><span class="n">definitions</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'tree'</span><span class="p">:</span> <span class="s1">'a woody perennial plant.'</span><span class="p">,</span>
+    <span class="s1">'shrub'</span><span class="p">:</span> <span class="s1">'a woody plant which is smaller than a tree'</span><span class="p">,</span>
+    <span class="s1">'bush'</span><span class="p">:</span> <span class="s1">'a shrub or clump of shrubs'</span><span class="p">,</span>
+    <span class="s1">'hedge'</span><span class="p">:</span> <span class="s1">'a fence or boundary formed by closely growing bushes or shrubs'</span>
+<span class="p">}</span>
+
+<span class="c1"># Get the definition of tree</span>
+<span class="n">tree_definition</span>  <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s1">'tree'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'tree: </span><span class="si">{</span><span class="n">tree_definition</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div>
+<p>This program outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="go">&gt;&gt;&gt;</span>
+<span class="go">tree: a woody perennial plant.</span>
+</code></pre></div>
+<h3 id="literals-and-values">Literals and Values<a class="headerlink" href="#literals-and-values" title="Permanent link">¶</a></h3>
+<p>Define a dictionary in Python by enclosing a comma-separated list of <code>key: value</code> 
+pairs with curly-braces <code>{}</code>. The following example maps country codes (keys) to 
+country names (values).</p>
+<div class="highlight"><span class="filename">dictionary_examples.py</span><pre><span></span><code><span class="n">codes_countries</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'US'</span><span class="p">:</span> <span class="s1">'United States'</span><span class="p">,</span> <span class="s1">'IN'</span><span class="p">:</span> <span class="s1">'India'</span><span class="p">}</span>
+<span class="n">country</span> <span class="o">=</span> <span class="n">codes_countries</span><span class="p">[</span><span class="s1">'IN'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Code IN is for </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code><span class="go">Code IN is for India</span>
+</code></pre></div>
+<h3 id="the-dict-function">The <code>dict()</code> Function<a class="headerlink" href="#the-dict-function" title="Permanent link">¶</a></h3>
+<p>This function is used to:</p>
+<ul>
+<li>create an empty dictionary. Example <code>dict()</code> yields <code>{}</code>.</li>
+<li>create a new dictionary from keyword arguments. See example below.</li>
+</ul>
+<p>This example uses the <code>dict()</code> function to define the <code>codes_countries</code> dictionary 
+above. Try running this in a Python shell to see that it is equivalent to the previous 
+example.</p>
+<div class="highlight"><span class="filename">dictionary_examples.py</span><pre><span></span><code><span class="n">codes_countries</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">US</span><span class="o">=</span><span class="s1">'United States'</span><span class="p">,</span> <span class="n">IN</span><span class="o">=</span><span class="s1">'India'</span><span class="p">)</span>  <span class="c1"># (1)! </span>
+<span class="n">country</span> <span class="o">=</span> <span class="n">codes_countries</span><span class="p">[</span><span class="s1">'IN'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Code IN is for </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>Note that string keys to not need quotes when using the <code>dict()</code> function to define 
+   a dictionary.</li>
+</ol>
+<p>Dictionaries have a full chapter devoted to them where they are covered in more detail.
+We know turn our attention to Sets.</p>
+<h2 id="set-types">Set Types<a class="headerlink" href="#set-types" title="Permanent link">¶</a></h2>
+<p>Python sets are <em>unordered</em> collections of unique Python objects.  Python sets are 
+implemented by the <code>set</code> type. Set types can only store certain types. This type 
+requires a good bit of additional discussion that is covered in a later chapter.  For 
+this gentle introduction to <code>set</code> types covers only built-in Python types that can be 
+stored in a set. </p>
+<p>Sets are used to:</p>
+<ul>
+<li>remove duplicates from other types like lists and tuples.</li>
+<li>perform mathematical set operations like intersection and union.</li>
+</ul>
+<h3 id="literals-and-values_1">Literals and Values<a class="headerlink" href="#literals-and-values_1" title="Permanent link">¶</a></h3>
+<p>Define a <code>set</code> variable using a <code>set</code> literal which is a comma-separated sequence of 
+objects enclosed in curly braces <code>{ }</code>. The following example defines a set of words. 
+Note that even though the word "shrub" is included twice, there is only one such value 
+stored in the resulting set.</p>
+<div class="highlight"><pre><span></span><code><span class="n">woody_plants</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'tree'</span><span class="p">,</span> <span class="s1">'shrub'</span><span class="p">,</span> <span class="s1">'bush'</span><span class="p">,</span> <span class="s1">'hedge'</span><span class="p">,</span> <span class="s1">'shrub'</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">woody_plants</span><span class="p">)</span>
+</code></pre></div>
+<p>Running this example results in the following output. Note that the order is not 
+preserved. Sets are <em>unordered</em> collections. </p>
+<div class="highlight"><pre><span></span><code><span class="go">{'shrub', 'tree', 'hedge', 'bush'}</span>
+</code></pre></div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Sets and dictionaries both use curly braces <code>{ }</code> as delimiters. The two can be 
+easily distinguished from each other because <code>set</code> types do not contain any <code>:</code>. 
+Note also that an empty <code>dict</code> literal is <code>{}</code> whereas an empty <code>set</code> literal is 
+<code>set()</code>. </p>
+</div>
+<h3 id="the-set-function">The <code>set()</code> Function<a class="headerlink" href="#the-set-function" title="Permanent link">¶</a></h3>
+<p>This function is used to:</p>
+<ul>
+<li>create an empty <code>set</code> type. Example: <code>set()</code> yields <code>set()</code>.</li>
+<li>create a set from another compatible type. Example <code>set('abc')</code> yields <code>{'a', 'b','c'}</code>.</li>
+</ul>
+<h2 id="style-notes">Style Notes<a class="headerlink" href="#style-notes" title="Permanent link">¶</a></h2>
+<p><abbr title="The primary focus of PEP 8 is to improve the readability and consistency of Python code.">PEP8</abbr> guidelines make several recommendations that apply to many of the types covered 
+here.  The following examples demonstrate how to follow these widely accepted guidelines. </p>
+<h3 id="string-delimiters">String Delimiters<a class="headerlink" href="#string-delimiters" title="Permanent link">¶</a></h3>
+<p>In Python, single and double quotes are equivalent. <abbr title="The primary focus of PEP 8 is to improve the readability and consistency of Python code.">PEP8</abbr> makes no recommendation as to 
+which one to use for string delimiters.  Decide which one you prefer and use it 
+consistently throughout a single codebase.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># WRONG:</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s2">"Jack"</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s1">'Handy'</span>    <span class="c1"># mixed quote types for strings</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># CORRECT:</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s1">'Jack'</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s1">'Handy'</span>    <span class="c1"># pick one type and use it consistently</span>
+</code></pre></div>
+<h3 id="sequences">Sequences<a class="headerlink" href="#sequences" title="Permanent link">¶</a></h3>
+<p>Sequences of values or variables are used when defining lists, tuples, dictionaries, and 
+sets. <abbr title="The primary focus of PEP 8 is to improve the readability and consistency of Python code.">PEP8</abbr> makes a general recommendation that a space be included after <em>any</em> comma 
+that is not at the end of a line. When defining these types, include these spaces.[^2]</p>
+<p>The following examples demonstrate:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># WRONG:</span>
+<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># CORRECT:</span>
+<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># WRONG:</span>
+<span class="n">codes_countries</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'US'</span><span class="p">:</span> <span class="s1">'United States'</span><span class="p">,</span><span class="s1">'IN'</span><span class="p">:</span> <span class="s1">'India'</span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># CORRECT:</span>
+<span class="n">codes_countries</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'US'</span><span class="p">:</span> <span class="s1">'United States'</span><span class="p">,</span> <span class="s1">'IN'</span><span class="p">:</span> <span class="s1">'India'</span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># WRONG:</span>
+<span class="n">woody_plants</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'tree'</span><span class="p">,</span><span class="s1">'shrub'</span><span class="p">,</span><span class="s1">'bush'</span><span class="p">,</span><span class="s1">'hedge'</span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># CORRECT:</span>
+<span class="n">woody_plants</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'tree'</span><span class="p">,</span> <span class="s1">'shrub'</span><span class="p">,</span> <span class="s1">'bush'</span><span class="p">,</span> <span class="s1">'hedge'</span><span class="p">}</span>
+</code></pre></div>
+<h3 id="spaces-after">Spaces After <code>:</code><a class="headerlink" href="#spaces-after" title="Permanent link">¶</a></h3>
+<p>When defining dictionaries, include a single space after every semicolon <code>:</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># WRONG:</span>
+<span class="n">codes_countries</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'US'</span><span class="p">:</span><span class="s1">'United States'</span><span class="p">,</span> <span class="s1">'IN'</span><span class="p">:</span><span class="s1">'India'</span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># CORRECT:</span>
+<span class="n">codes_countries</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'US'</span><span class="p">:</span> <span class="s1">'United States'</span><span class="p">,</span> <span class="s1">'IN'</span><span class="p">:</span> <span class="s1">'India'</span><span class="p">}</span>
+</code></pre></div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<p>This concludes a rather broad survey of basic Python types. Each of these types 
+receives detailed coverage in later chapters.</p>
+<h2 id="related-links">Related Links<a class="headerlink" href="#related-links" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://docs.python.org/3/library/stdtypes.html">Official Documentation - Built-in Types</a></li>
+</ul>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>See <a href="https://peps.python.org/pep-0008/#string-quotes"><abbr title="The primary focus of PEP 8 is to improve the readability and consistency of Python code.">PEP8</abbr> String Delimiters</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+<br/>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+</small>
+</div>
+<form class="md-feedback" hidden="" name="feedback">
+<fieldset>
+<legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+<div class="md-feedback__inner">
+<div class="md-feedback__list">
+<button class="md-feedback__icon md-icon" data-md-value="1" title="This page was helpful" type="submit">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"></path></svg>
+</button>
+<button class="md-feedback__icon md-icon" data-md-value="0" title="This page could be improved" type="submit">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"></path></svg>
+</button>
+</div>
+<div class="md-feedback__note">
+<div data-md-value="1" hidden="">
+              
+              
+                
+              
+              
+                Thanks for your feedback!
+              
+            </div>
+<div data-md-value="0" hidden="">
+              
+              
+                
+              
+              
+                Thanks for your feedback! Help improve this page by using the <a href="https://github.com/ephsmith/python-book/issues/new?assignees=ephsmith&amp;labels=feedback&amp;template=feedback.md&amp;title=Basic%20Types+-+/02/02-basic-types/" rel="noopener" target="_blank">feedback form</a>.
+              
+            </div>
+</div>
+</div>
+</fieldset>
+</form>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Setting up Python" class="md-footer__link md-footer__link--prev" href="../02-setting-up-python/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Setting up Python
+            </div>
+</div>
+</a>
+<a aria-label="Next: Python Typing" class="md-footer__link md-footer__link--next" href="../02-python-typing/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Python Typing
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 Forrest Smith
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "content.code.annotate", "navigation.tracking", "navigation.top"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+</html>

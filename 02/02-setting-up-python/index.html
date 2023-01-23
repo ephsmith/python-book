@@ -1,0 +1,1015 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://ephsmith.github.io/python-book/02/02-setting-up-python/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.0, mkdocs-material-8.5.7" name="generator"/>
+<title>Setting up Python - Introductory Python</title>
+<link href="../../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25 0 0 1 .25-.25h5.025a.25.25 0 0 1 .177.073l6.25 6.25a.25.25 0 0 1 0 .354l-5.025 5.025a.25.25 0 0 1-.354 0l-6.25-6.25a.25.25 0 0 1-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.75 1.75 0 0 1 1 7.775zM6 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 0 1 .25-.25h8.5a.25.25 0 0 1 .25.25v7.736a.75.75 0 1 0 1.5 0V1.75A1.75 1.75 0 0 0 11.25 0h-8.5A1.75 1.75 0 0 0 1 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 0 0 0-1.5H2.75a.25.25 0 0 1-.25-.25V1.75zM4.75 4a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5zM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75zm11.774 3.537a.75.75 0 0 0-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 0 0-1.062 1.058l1.943 1.95a.75.75 0 0 0 1.055.008l4.557-4.45z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm6.5-.25A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75zM8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.489 4.489 0 0 1-.563-1.191 3.833 3.833 0 0 1-.05-2.063 4.636 4.636 0 0 1-2.025-.293.75.75 0 1 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.748.748 0 0 1 1.06 0 .75.75 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.404 2.404 0 0 1-.507-.441 3.063 3.063 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19a.753.753 0 0 1 .01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768a85.08 85.08 0 0 0-.317-.265c-.814-.68-1.75-1.462-2.692-2.619a3.74 3.74 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353V.75z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm9 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 0 1 9 6.25c0 .177-.04.264-.077.318a.956.956 0 0 1-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 0 0-.313.195 2.416 2.416 0 0 0-.692.661.75.75 0 0 0 1.248.832.956.956 0 0 1 .276-.245 6.3 6.3 0 0 1 .26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 0 0 8 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 1 0 1.342.67z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.404 12.596a6.5 6.5 0 1 1 9.192-9.192 6.5 6.5 0 0 1-9.192 9.192zM2.344 2.343a8 8 0 1 0 11.313 11.314A8 8 0 0 0 2.343 2.343zM6.03 4.97a.75.75 0 0 0-1.06 1.06L6.94 8 4.97 9.97a.75.75 0 1 0 1.06 1.06L8 9.06l1.97 1.97a.75.75 0 1 0 1.06-1.06L9.06 8l1.97-1.97a.75.75 0 1 0-1.06-1.06L8 6.94 6.03 4.97z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 0 0-.01.004L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.02.02 0 0 0-.004-.009.02.02 0 0 0-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.492 3.492 0 0 1 2.441 0l.999-1a.75.75 0 1 1 1.06 1.061l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.013 5.013 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.684 1.684 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06zM6.173 5h3.654A.173.173 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173zM5.25 6.5a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75h-5.5z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458L5 5.782zM9.5 2.5h-3V6a.75.75 0 0 1-.117.403L4.73 9h6.54L9.617 6.403A.75.75 0 0 1 9.5 6V2.5zm-6.9 9.847L3.775 10.5h8.45l1.175 1.847a.75.75 0 0 1-.633 1.153H3.233a.75.75 0 0 1-.633-1.153z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 2.5a.75.75 0 0 0 0 1.5h10.5a.75.75 0 0 0 0-1.5H1.75zm4 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zm0 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zM2.5 7.75a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0v-6z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/hint.min.css" rel="stylesheet"/>
+<link href="../../css/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QMGXXK5ZHY"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QMGXXK5ZHY",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QMGXXK5ZHY",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="amber" data-md-color-primary="cyan" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#downloading-python">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Introductory Python" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Introductory Python">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Introductory Python
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Setting up Python
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="amber" data-md-color-media="" data-md-color-primary="cyan" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="amber" data-md-color-media="" data-md-color-primary="cyan" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ephsmith/python-book" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+</div>
+<div class="md-source__repository">
+    ephsmith/python-book
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Introductory Python" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Introductory Python">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Introductory Python
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ephsmith/python-book" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+</div>
+<div class="md-source__repository">
+    ephsmith/python-book
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/">
+        About
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          Book
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Book" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Book
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01/01-why-python/">
+        1. Why Python?
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2">
+          2. First Steps with Python
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="2. First Steps with Python" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+          2. First Steps with Python
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Setting up Python
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Setting up Python
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#downloading-python">
+    Downloading Python
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-python">
+    Installing Python
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-the-idle-ide">
+    Using the IDLE IDE
+  </a>
+<nav aria-label="Using the IDLE IDE" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launching-idle">
+    Launching IDLE
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introducing-the-python-shell">
+    Introducing the Python Shell
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-python-as-a-calculator">
+    Use Python as a Calculator
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-some-variables">
+    Add Some Variables
+  </a>
+<nav aria-label="Add Some Variables" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rules-for-names-in-python">
+    Rules for Names in Python
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#keyboard-shortcuts-in-the-shell">
+    Keyboard Shortcuts in the Shell
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-editor-window">
+    The Editor Window
+  </a>
+<nav aria-label="The Editor Window" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#edit-and-run-a-new-python-module">
+    Edit and Run a New Python Module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#edit-and-run-an-existing-python-module">
+    Edit and Run an Existing Python Module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#learn-python-with-idle">
+    Learn Python with IDLE
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-ides">
+    Other IDEs
+  </a>
+<nav aria-label="Other IDEs" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microsoft-visual-studio-code">
+    Microsoft Visual Studio Code
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pycharm">
+    Pycharm
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#jupyter-notebooks">
+    Jupyter Notebooks
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-resources">
+    Related Resources
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-basic-types/">
+        Basic Types
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-python-typing/">
+        Python Typing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-essential-built-ins/">
+        Essential Built-Ins
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-handling-errors/">
+        Handling Errors
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3">
+          3. Strings
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="3. Strings" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+          3. Strings
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03/03-strings/">
+        Strings and String Methods
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03/03-long-strings/">
+        Long String Literals
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          References and Guides
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="References and Guides" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          References and Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guides/github-references/">
+        GitHub
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guides/python-naming-rules-conventions/">
+        Rules and Conventions for Names
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guides/style-guidelines/">
+        Style Guidelines
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#downloading-python">
+    Downloading Python
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-python">
+    Installing Python
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-the-idle-ide">
+    Using the IDLE IDE
+  </a>
+<nav aria-label="Using the IDLE IDE" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#launching-idle">
+    Launching IDLE
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introducing-the-python-shell">
+    Introducing the Python Shell
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-python-as-a-calculator">
+    Use Python as a Calculator
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-some-variables">
+    Add Some Variables
+  </a>
+<nav aria-label="Add Some Variables" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rules-for-names-in-python">
+    Rules for Names in Python
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#keyboard-shortcuts-in-the-shell">
+    Keyboard Shortcuts in the Shell
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-editor-window">
+    The Editor Window
+  </a>
+<nav aria-label="The Editor Window" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#edit-and-run-a-new-python-module">
+    Edit and Run a New Python Module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#edit-and-run-an-existing-python-module">
+    Edit and Run an Existing Python Module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#learn-python-with-idle">
+    Learn Python with IDLE
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-ides">
+    Other IDEs
+  </a>
+<nav aria-label="Other IDEs" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microsoft-visual-studio-code">
+    Microsoft Visual Studio Code
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pycharm">
+    Pycharm
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#jupyter-notebooks">
+    Jupyter Notebooks
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-resources">
+    Related Resources
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/ephsmith/python-book/edit/main/docs/02/02-setting-up-python.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1>Setting up Python</h1>
+<h2 id="downloading-python">Downloading Python<a class="headerlink" href="#downloading-python" title="Permanent link">¶</a></h2>
+<p>The Python version supported by this text is version <strong>3.10.x</strong> (note
+that the <code>x</code> can be any number). When downloading Python, please be
+sure to select this version.</p>
+<p>Official Python releases are available from the official <a href="https://www.python.org">Python
+Page</a>. The site auto detects your operating
+system and provides a link to the most current version. If the target
+version is not listed, you can visit the <a href="https://www.python.org/downloads/">All
+Releases</a> page to locate it.</p>
+<h2 id="installing-python">Installing Python<a class="headerlink" href="#installing-python" title="Permanent link">¶</a></h2>
+<p>For installation instructions, I will lean on the expertise of the
+RealPython team. This platform maintains up-to-date, community
+reviewed instuctions and articles on many Python related topics.</p>
+<p>Visit the RealPython <a href="https://realpython.com/installing-python/">installation
+instructions</a> for an
+up-to-date guide on installing for your operating system and platform.</p>
+<div class="admonition danger">
+<p class="admonition-title">For Windows Users...</p>
+<p>Do not install the Microsoft Store version of Python. Be sure to
+install the package available from the official Python page.</p>
+</div>
+<h2 id="using-the-idle-ide">Using the <abbr title="Integrated Development and Learning Environment">IDLE</abbr> IDE<a class="headerlink" href="#using-the-idle-ide" title="Permanent link">¶</a></h2>
+<p>An IDE (intgrated development environment) typically includes:</p>
+<ul>
+<li>an editor for editing code</li>
+<li>a method for building / running code</li>
+<li>a debugger for tracing program execution and troubleshooting errors</li>
+</ul>
+<p>Python programs are simply text files, so you can technically use your preferred
+<em>plain text editor</em> to edit Python code. However, you will need to
+rely on the operating system shell / terminal to run your code using
+the Python interpreter.</p>
+<p>An IDE simplifies your workflow when editing and running programs. For
+first time Python users, <abbr title="Integrated Development and Learning Environment">IDLE</abbr> is a great choice for many reasons:</p>
+<ul>
+<li><abbr title="Integrated Development and Learning Environment">IDLE</abbr> is installed when you install Python using the official
+  installer.</li>
+<li><abbr title="Integrated Development and Learning Environment">IDLE</abbr> is preconfigured and ready to use for Python development.</li>
+<li><abbr title="Integrated Development and Learning Environment">IDLE</abbr> is simpler than most IDEs.</li>
+</ul>
+<p>This text will refer only to <abbr title="Integrated Development and Learning Environment">IDLE</abbr> when showing examples that involve
+an IDE.</p>
+<h3 id="launching-idle">Launching <abbr title="Integrated Development and Learning Environment">IDLE</abbr><a class="headerlink" href="#launching-idle" title="Permanent link">¶</a></h3>
+<p>Launch <abbr title="Integrated Development and Learning Environment">IDLE</abbr> using your favorite launch method. On most operating
+systems, the search feature is typically the fastest.</p>
+<ul>
+<li>On Windows, press the Windows key and start typing <abbr title="Integrated Development and Learning Environment">IDLE</abbr></li>
+<li>On macOS, type Command + SPACE and start typing <abbr title="Integrated Development and Learning Environment">IDLE</abbr></li>
+</ul>
+<p>When <abbr title="Integrated Development and Learning Environment">IDLE</abbr> launches, you will be greeted by a window containing the
+Python shell. We'll refer to this as the "shell window" or
+"interactive window".  The interactive window lets you interact with
+the Python interpreter directly by entering code statements and
+viewing the result.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../../img/02-python-shell.gif"><img alt="Python Shell" src="../../img/02-python-shell.gif" width="500"/></a>
+</p>
+<figcaption>Python Shell / IDLE Interactive Window</figcaption>
+</figure>
+<h3 id="introducing-the-python-shell">Introducing the Python Shell<a class="headerlink" href="#introducing-the-python-shell" title="Permanent link">¶</a></h3>
+<p>The default Python shell provides a simple Read-Evaluate-Print-Loop
+(<abbr title="REPL stands for Read-Eval-Print-Loop.">REPL</abbr>) interface to the Python interpreter. You are greeted with the
+Python shell when you start <abbr title="Integrated Development and Learning Environment">IDLE</abbr> or launch the shell directly from an
+OS shell.</p>
+<p>Take a moment to explore the basic parts of the Python shell using the
+annotations below.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Python</span> <span class="mf">3.10.0</span> <span class="p">(</span><span class="n">v3</span><span class="mf">.10.0</span><span class="p">:</span><span class="n">b494f5935c</span><span class="p">,</span> <span class="n">Oct</span>  <span class="mi">4</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">14</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">19</span><span class="p">)</span> <span class="p">[</span><span class="n">Clang</span>
+<span class="mf">12.0.5</span> <span class="p">(</span><span class="n">clang</span><span class="o">-</span><span class="mf">1205.0.22.11</span><span class="p">)]</span> <span class="n">on</span> <span class="n">darwin</span> <span class="c1"># (1)!</span>
+<span class="n">Type</span> <span class="s2">"help"</span><span class="p">,</span> <span class="s2">"copyright"</span><span class="p">,</span> <span class="s2">"credits"</span> <span class="ow">or</span> <span class="s2">"license()"</span> <span class="k">for</span> <span class="n">more</span>
+<span class="n">information</span><span class="o">.</span> <span class="c1"># (2)!</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="c1"># (3)!</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'Hello World!'</span><span class="p">)</span> <span class="c1"># (4)!</span>
+<span class="n">Hello</span> <span class="n">World</span> <span class="c1"># (5)!</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<ol>
+<li>
+<p>The Python version (here, 3.10.0) is shown at the beginning of a
+   Python shell session.</p>
+</li>
+<li>
+<p>Don't overlook <code>help</code> here. Python's help feature is, well,
+   helpful.</p>
+</li>
+<li>
+<p>The <code>&gt;&gt;&gt;</code> shown here is the Python shell prompt. Never enter these
+   characters explicitly when pasting example code.</p>
+</li>
+<li>
+<p>Enter a single line of Python code like this one. When you press
+   +Enter+, the Python interpreter <em>reads</em> and <em>evaluates</em> the
+   code. It then <em>prints</em> the result.</p>
+</li>
+<li>
+<p>The Python interpreter <em>prints</em> the result. Note the absences of
+   the <code>&gt;&gt;&gt;</code> prompt on the result line.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The term "shell" is more commonly used to refer to an operating
+system command line interface such as CMD.exe on Windows or
+Terminal.app on macOS. "Python shell" will be used whenever
+referring to Python.</p>
+</div>
+<h3 id="use-python-as-a-calculator">Use Python as a Calculator<a class="headerlink" href="#use-python-as-a-calculator" title="Permanent link">¶</a></h3>
+<p>You can use the Python shell as a simple calculator. Python arithmetic
+expressions use the following operators.</p>
+<table>
+<thead>
+<tr>
+<th>example operation</th>
+<th>result</th>
+<th>mathematical operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2 + 5</code></td>
+<td><code>7</code></td>
+<td>addition</td>
+</tr>
+<tr>
+<td><code>2 - 5</code></td>
+<td><code>-3</code></td>
+<td>subtraction</td>
+</tr>
+<tr>
+<td><code>5 / 2</code></td>
+<td><code>2.5</code></td>
+<td>float division</td>
+</tr>
+<tr>
+<td><code>5 * 2</code></td>
+<td><code>10</code></td>
+<td>multiplication</td>
+</tr>
+<tr>
+<td><code>2 ** 5</code></td>
+<td><code>32</code></td>
+<td>exponentiation</td>
+</tr>
+<tr>
+<td><code>5 // 2</code></td>
+<td><code>2</code></td>
+<td>integer division</td>
+</tr>
+<tr>
+<td><code>5 % 2</code></td>
+<td><code>1</code></td>
+<td>modulus operator</td>
+</tr>
+</tbody>
+</table>
+<p>When you enter one of these expression at the Python shell prompt the
+result will be printed below the prompt.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../../img/02-shell-calculator.png"><img alt="Python as a calculator" src="../../img/02-shell-calculator.png"/></a></p>
+<h3 id="add-some-variables">Add Some Variables<a class="headerlink" href="#add-some-variables" title="Permanent link">¶</a></h3>
+<p>Variables are names (symbols) that refer to a value. In order to use a
+variable, a value must be assigned to it using the <em>assignment
+operator</em> <code>=</code>. Experimemnt with this a bit using single character
+variable names.</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># (1)!</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># (2)!</span>
+<span class="n">x</span> <span class="o">+</span> <span class="n">y</span>  <span class="c1"># (3)!</span>
+</code></pre></div>
+<ol>
+<li>
+<p>The symbol (name) <code>x</code> now refers to the value <code>5</code>.</p>
+</li>
+<li>
+<p>The symbol <code>y</code> now refers to the value `2.</p>
+</li>
+<li>
+<p>In evaluating this expression, the Python interpreter retrieves the
+   values referred to by the names (<code>x</code> and <code>y</code>) before evaluating the
+   arithmetic expression.</p>
+</li>
+</ol>
+<h4 id="rules-for-names-in-python">Rules for Names in Python<a class="headerlink" href="#rules-for-names-in-python" title="Permanent link">¶</a></h4>
+<p>The rules for names in Python are simple, yet important. One common
+pitfall is forgetting that names are case sensitive in Python. This
+means that <code>height</code> and <code>Height</code> are different names in Python.</p>
+<ul>
+<li>A variable name must start with a letter or the underscore character
+  (<code>_</code>)</li>
+<li>A variable name cannot start with a number</li>
+<li>A variable name can only contain alpha-numeric characters and
+  underscores (<code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, and <code>_</code> ).</li>
+<li>Variable names are case-sensitive (<code>age</code>, <code>Age</code> and <code>AGE</code> are three
+  different variables)</li>
+</ul>
+<h3 id="keyboard-shortcuts-in-the-shell">Keyboard Shortcuts in the Shell<a class="headerlink" href="#keyboard-shortcuts-in-the-shell" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span></td>
+<td>previous history</td>
+</tr>
+<tr>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-n">N</kbd></span></td>
+<td>next history</td>
+</tr>
+<tr>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-a">A</kbd></span></td>
+<td>beginning of line</td>
+</tr>
+<tr>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-e">E</kbd></span></td>
+<td>end of line</td>
+</tr>
+</tbody>
+</table>
+<p>It is also worth noting that the previous result is always stored in
+the varaible <code>_</code>.  You can access this instead of copying and pasting
+a result. Example shell session:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">_</span> <span class="o">+</span> <span class="mi">10</span> <span class="c1"># (1)!</span>
+<span class="mi">17</span>
+</code></pre></div>
+<ol>
+<li><code>_</code> is a special Python shell variable that stores the result of
+   the last expression evaluated by the interpreter. Use this instead
+   of copying and pasting.</li>
+</ol>
+<h3 id="the-editor-window">The Editor Window<a class="headerlink" href="#the-editor-window" title="Permanent link">¶</a></h3>
+<p>The Python shell is an essential development tool for quickly
+prototyping ideas. In a typical software development workflow, use of
+the Python shell is typically short-lived because we need our code to
+reside in a place where it can be re-used--in a file. We use the <abbr title="Integrated Development and Learning Environment">IDLE</abbr>
+editor window for this.</p>
+<p>Files that contain Python code are referred to as Python <em>scripts</em>,
+<em>modules</em>, or simply Python files.</p>
+<ul>
+<li><strong>script</strong>: a file containing Python code that is meant to be run
+  directly--like a standalone program/application.</li>
+<li><strong>module</strong>: A module is a file containing Python code that can be
+  imported by other Python scripts or modules. (<em>Note that Python
+  modules can also be run directly.</em>)</li>
+</ul>
+<h4 id="edit-and-run-a-new-python-module">Edit and Run a New Python Module<a class="headerlink" href="#edit-and-run-a-new-python-module" title="Permanent link">¶</a></h4>
+<p>When <abbr title="Integrated Development and Learning Environment">IDLE</abbr> launches, only the Python shell window is displayed for
+use. You can open an editor window by selecting <code>File -&gt; New
+File</code>. <em>Try this now</em> and enter the following calculator code into the
+resulting window.</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre></div>
+<p>You'll need to save this file with a Python extension <code>.py</code> before you
+can run it.</p>
+<ol>
+<li>Choose <code>File -&gt; Save</code> (or <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span> on
+   <span class="twemoji"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m0 93.7 183.6-25.3v177.4H0V93.7zm0 324.6 183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"></path></svg></span>, <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-s">S</kbd></span> on
+   <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg></span>)</li>
+<li>Choose a file location and save the file as <code>calculate.py</code>.</li>
+</ol>
+<p>Now that you have saved the file, you can run the file using <code>Run -&gt;
+Run Module</code>. <em>Note that there is a keyboard shortcut for this as
+well</em>--(<span class="keys"><kbd class="key-f5">F5</kbd></span>)</p>
+<p>If you entered the exact code above in the file, you'll notice that
+there is no output when you run the module. This is one key difference
+between the editor and the Python shell. <em>The Python shell always
+displays the result of an expression</em>.  When we run a module, the
+result of every expression is <em>not</em> printed to the screen. In order to
+view the results of expressions, we must use the <code>print()</code> function.</p>
+<p>Modify your code to include the modifications shown below:</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># (1)!</span>
+</code></pre></div>
+<ol>
+<li>Use <code>print</code> to display the result of (or value of) an expression.</li>
+</ol>
+<h4 id="edit-and-run-an-existing-python-module">Edit and Run an Existing Python Module<a class="headerlink" href="#edit-and-run-an-existing-python-module" title="Permanent link">¶</a></h4>
+<ol>
+<li>In <abbr title="Integrated Development and Learning Environment">IDLE</abbr>, use <code>FILE -&gt; Open</code></li>
+<li>From the file browser, right-click the file and choose <code>Open with IDLE</code></li>
+</ol>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Double-clicking a Python file in the file browser will cause the module to be executed in the background. </p>
+</div>
+<h3 id="learn-python-with-idle">Learn Python with <abbr title="Integrated Development and Learning Environment">IDLE</abbr><a class="headerlink" href="#learn-python-with-idle" title="Permanent link">¶</a></h3>
+<p>As you progress through the course, you will encounter many new
+language features. You can <em>accelerate</em> your learning by interacting
+with these features as soon as you encounter them. Use the Python
+shell to quickly try out Python code snippets found in this text. When
+code snippets begin to evolve into something you want to experiment
+with a bit more, use the editor to maintain the code in an editable
+file which you can run again and again.</p>
+<p>Here are some tips for learning with <abbr title="Integrated Development and Learning Environment">IDLE</abbr>:</p>
+<ul>
+<li>Keep <abbr title="Integrated Development and Learning Environment">IDLE</abbr> open while working through this text.</li>
+<li>Click the <em>copy to clipboard</em> icon next to any code in this text to
+  copy the code.</li>
+<li>Paste the code into the Python shell to quickly view a result.</li>
+<li>Re-paste the code and make some modifications.</li>
+<li>Collect code snippets in a Python module for further modifications</li>
+<li>recall that you need to add <code>print()</code> to print any results that
+    are not already printed.</li>
+</ul>
+<h2 id="other-ides">Other IDEs<a class="headerlink" href="#other-ides" title="Permanent link">¶</a></h2>
+<p>It is highly recommended that you use <abbr title="Integrated Development and Learning Environment">IDLE</abbr> initially if you are a
+just getting started with the Python language. <abbr title="Integrated Development and Learning Environment">IDLE</abbr> is installed when
+you install Python from <a href="https://www.python.org">the offical Python
+site</a>. Moreover, <abbr title="Integrated Development and Learning Environment">IDLE</abbr> requires no additional
+configuration and its minimal interface keeps the focus on the
+language.</p>
+<p>As you become more comfortable with the language, you'll inevitably
+long for a more feature rich environment for developing Python code.</p>
+<h3 id="microsoft-visual-studio-code">Microsoft Visual Studio Code<a class="headerlink" href="#microsoft-visual-studio-code" title="Permanent link">¶</a></h3>
+<p><a href="https://code.visualstudio.com/download">Visual Studio Code</a> is a widely used IDE. VS Code is has strong support
+for Python via extensions.  Visit the <a href="https://realpython.com/python-development-visual-studio-code/">Real Python article</a> on setting
+up VS Code for Python development.</p>
+<p>Thoughts on VS Code:</p>
+<ul>
+<li>VS Code requires a bit of configuration before it is in a usable
+  state for Python development.</li>
+<li>VS Code is freely available and runs on most platforms.</li>
+</ul>
+<h3 id="pycharm">Pycharm<a class="headerlink" href="#pycharm" title="Permanent link">¶</a></h3>
+<p><a href="https://www.jetbrains.com/pycharm-edu/">Pycharm</a> is a JetBrains product.  The
+education version is free, but you will need to verify student
+status--the process is simple and worth it. Visit the <a href="https://realpython.com/pycharm-guide/">RealPython
+article</a> on using PyCharm for
+development.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PyCharm is a highly recommended IDE. Give it a try once you have
+some minimal experience programming Python with <abbr title="Integrated Development and Learning Environment">IDLE</abbr>.</p>
+<p>PyCharm educational licenses are quite easy to obtain. Be sure to 
+get the educational version (not the community edition). 
+PyCharm integrates
+well with all Python environments and GitHub.  It also supports
+notebooks.  All of this comes with very minimal configuration compared
+to Jupyter and VS Code. </p>
+</div>
+<p>Thoughts on PyCharm:</p>
+<ul>
+<li>PyCharm requires much less configuration compared to VS Code</li>
+<li>PyCharm is designed as a Python first IDE, so it is ready for Python
+  development.</li>
+<li>PyCharm feels like more of a professional product compared to VS
+  Code. This is, of course, subjective.</li>
+<li>PyCharm runs on Windows or macOS.</li>
+</ul>
+<h3 id="jupyter-notebooks">Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permanent link">¶</a></h3>
+<p>Jupyter Notebooks are a great way to develop Python. Jupyter Notebooks
+provide a browser based editing environment for Python. In a notebook,
+code is entered into "cells".  Cells can be evaluated any number of
+times and the result is printed below the cell. Notebooks fill
+the functional space between the Python shell and an editor. In a
+notebook, the results of expressions are printed below once evaluated,
+but the code remains in an editable state after execution. Notebooks
+also provide the ability to document / annotate your code using
+special <a href="https://www.markdownguide.org">Markdown</a> cells. If a graphics
+enabled Python library is used in a Jupyter notebook, the graphics are
+displayed inline in the Notebook.  All of these features make
+notebooks the most visual way to develop Python.</p>
+<p>Visit the
+<a href="https://realpython.com/jupyter-notebook-introduction/">RealPython</a>
+article on getting started with Jupyter Notebooks.</p>
+<p>Thoughts on Notebooks:</p>
+<ul>
+<li>Notebooks are a great way to learn and develop Python</li>
+<li>Notebooks are widely used in the data science and academic domains</li>
+<li>Notebooks are very visual--graphics and results are displayed
+  alongside the code that produced them.</li>
+<li><strong>Caution</strong>: Notebooks can lead to strange issues related to execution
+  order. Example: it is possible to run a cell that depends on another
+  cell before the prerequisite cell is executed.  This can lead to
+  confusing or erroneous results and care must be taken to avoid this
+  issue.</li>
+<li><strong>Side benefit</strong>: The <a href="https://ipython.readthedocs.io/en/stable/">IPython</a> shell is installed when you install
+  Jupyter Lab or classic Jupyter Notebooks. This advanced Python shell
+  has many wonderful features.</li>
+</ul>
+<h2 id="related-resources">Related Resources<a class="headerlink" href="#related-resources" title="Permanent link">¶</a></h2>
+<ul>
+<li>From the official Documentation</li>
+<li><a href="https://docs.python.org/3/tutorial/interpreter.html#interactive-mode">Using the Python Interpreter</a>
+    Discusses launching the Python interpreter from the commandline.</li>
+</ul>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+<br/>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+</small>
+</div>
+<form class="md-feedback" hidden="" name="feedback">
+<fieldset>
+<legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+<div class="md-feedback__inner">
+<div class="md-feedback__list">
+<button class="md-feedback__icon md-icon" data-md-value="1" title="This page was helpful" type="submit">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"></path></svg>
+</button>
+<button class="md-feedback__icon md-icon" data-md-value="0" title="This page could be improved" type="submit">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"></path></svg>
+</button>
+</div>
+<div class="md-feedback__note">
+<div data-md-value="1" hidden="">
+              
+              
+                
+              
+              
+                Thanks for your feedback!
+              
+            </div>
+<div data-md-value="0" hidden="">
+              
+              
+                
+              
+              
+                Thanks for your feedback! Help improve this page by using the <a href="https://github.com/ephsmith/python-book/issues/new?assignees=ephsmith&amp;labels=feedback&amp;template=feedback.md&amp;title=Setting%20up%20Python+-+/02/02-setting-up-python/" rel="noopener" target="_blank">feedback form</a>.
+              
+            </div>
+</div>
+</div>
+</fieldset>
+</form>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: 1. Why Python?" class="md-footer__link md-footer__link--prev" href="../../01/01-why-python/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              1. Why Python?
+            </div>
+</div>
+</a>
+<a aria-label="Next: Basic Types" class="md-footer__link md-footer__link--next" href="../02-basic-types/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Basic Types
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 Forrest Smith
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "content.code.annotate", "navigation.tracking", "navigation.top"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+</html>
