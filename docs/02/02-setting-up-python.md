@@ -210,7 +210,7 @@ Files that contain Python code are referred to as Python *scripts*,
   imported by other Python scripts or modules. (*Note that Python
   modules can also be run directly.*)
 
-#### Edit and Run a Python Module
+#### Edit and Run a New Python Module
 When IDLE launches, only the Python shell window is displayed for
 use. You can open an editor window by selecting `File -> New
 File`. *Try this now* and enter the following calculator code into the
@@ -250,6 +250,14 @@ print(x + y) # (1)!
 ```
 
 1. Use `print` to display the result of (or value of) an expression.
+
+### Edit and Run an Existing Python Module
+1. In IDLE, use `FILE -> Open`
+2. From the file browser, right-click the file and choose `Open with IDLE`
+
+!!! danger
+    Double-clicking a Python file in the file browser will cause the module to be 
+executed in the background. 
 
 ### Learn Python with IDLE
 As you progress through the course, you will encounter many new
