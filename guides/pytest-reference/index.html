@@ -314,6 +314,11 @@
     Filter Tests
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#class-specific-examples">
+    Class Specific Examples
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -371,6 +376,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#filter-tests">
     Filter Tests
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#class-specific-examples">
+    Class Specific Examples
   </a>
 </li>
 </ul>
@@ -516,6 +526,36 @@ text:</p>
 <p>Similarly, the following command runs only those test cases that contain the text 
 <code>clean_underscores</code> in the function name:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>-k<span class="w"> </span><span class="s2">"clean_underscores"</span>
+</code></pre></div>
+<h3 id="class-specific-examples">Class Specific Examples<a class="headerlink" href="#class-specific-examples" title="Permanent link">¶</a></h3>
+<p>All assignments in this course include a <code>src</code> directory and a <code>tests</code> directory. 
+Solutions are implemented in the modules included in the <code>src</code> directory and tests are 
+located in the <code>tests</code> directory. </p>
+<p>To run all tests using <code>pytest</code>, run the <code>pytest</code> command with no arguments from the 
+directory that contains the <code>src</code> and <code>tests</code> directories.  This produce a <em>lot</em> of 
+output along with a short test summary at the end for tests that failed.  </p>
+<p><div class="highlight"><span class="filename">pytest short test summary</span><pre><span></span><code>================= short test summary info ==================
+FAILED tests/test_ex_0_4.py::test___int_sum___returns_correct_value[2-3] - AttributeError: module 'src.ex_0_4' has no attribute 'i...
+FAILED tests/test_ex_0_4.py::test___int_sum___returns_correct_value[3-6] - AttributeError: module 'src.ex_0_4' has no attribute 'i...
+FAILED tests/test_ex_0_4.py::test___int_sum___returns_correct_value[4-10] - AttributeError: module 'src.ex_0_4' has no attribute 'i...
+FAILED tests/test_ex_0_4.py::test___int_sum___returns_correct_value[5-15] - AttributeError: module 'src.ex_0_4' has no attribute 'i...
+FAILED tests/test_ex_0_4.py::test___odd_sum___returns_correct_value[2-4] - AttributeError: module 'src.ex_0_4' has no attribute 'o...
+FAILED tests/test_ex_0_4.py::test___odd_sum___returns_correct_value[3-9] - AttributeError: module 'src.ex_0_4' has no attribute 'o...
+FAILED tests/test_ex_0_4.py::test___odd_sum___returns_correct_value[4-16] - AttributeError: module 'src.ex_0_4' has no attribute 'o...
+FAILED tests/test_ex_0_4.py::test___odd_sum___returns_correct_value[5-25] - AttributeError: module 'src.ex_0_4' has no attribute 'o...
+FAILED tests/test_ex_0_5.py::test___ground_cover___exists[SN00-0] - AttributeError: module 'src.ex_0_5' has no attribute 'g...
+FAILED tests/test_ex_0_5.py::test___ground_cover___exists[SN10-1] - AttributeError: module 'src.ex_0_5' has no attribute 'g...
+FAILED tests/test_ex_0_5.py::test___ground_cover___exists[SN20-2] - AttributeError: module 'src.ex_0_5' has no attribute 'g...
+FAILED tests/test_ex_0_5.py::test___depth___exists[SN00-0] - AttributeError: module 'src.ex_0_5' has no attribute 'd...
+FAILED tests/test_ex_0_5.py::test___depth___exists[SN11-1] - AttributeError: module 'src.ex_0_5' has no attribute 'd...
+FAILED tests/test_ex_0_5.py::test___depth___exists[SN22-2] - AttributeError: module 'src.ex_0_5' has no attribute 'd...
+</code></pre></div>
+Note that each test case has the name pattern <code>test___&lt;function&gt;___&lt;case&gt;</code>.  Here, 
+<code>&lt;function&gt;</code> is the name of the function under test and <code>&lt;case&gt;</code> is the expected 
+outcome for the test case.</p>
+<p>We can filter pytest tests based on the <code>&lt;function&gt;</code> portion of any of these tests.<br/>
+To run tests only for <code>int_sum</code> for instance, use the following command </p>
+<div class="highlight"><span class="filename">Run tests for int_sum</span><pre><span></span><code>pytest<span class="w"> </span>-k<span class="w"> </span><span class="s2">"int_sum"</span>
 </code></pre></div>
 <hr/>
 <div class="md-source-file">
