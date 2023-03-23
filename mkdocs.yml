@@ -20,8 +20,11 @@ nav:
       - '3. Strings':
           - 'Strings and String Methods': '03/03-strings.md'
           - 'Long String Literals': '03/03-long-strings.md'
+      - '4. Lists':
+          - 'List Essentials': '04/04-lists.md'
     - 'References and Guides':
       - 'GitHub': 'guides/github-references.md'
+      - 'Pytest': 'guides/pytest-reference.md'
       - 'Rules and Conventions for Names': 'guides/python-naming-rules-conventions.md'
       - 'Style Guidelines': 'guides/style-guidelines.md'
 
