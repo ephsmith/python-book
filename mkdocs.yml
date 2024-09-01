@@ -20,8 +20,8 @@ nav:
       - '3. Strings':
           - 'Strings and String Methods': '03/03-strings.md'
           - 'Long String Literals': '03/03-long-strings.md'
-      - '4. Lists':
-          - 'List Essentials': '04/04-lists.md'
+#      - '4. Lists':
+#          - 'List Essentials': '04/04-lists.md'
     - 'References and Guides':
       - 'GitHub': 'guides/github-references.md'
       - 'Using git in PyCharm': 'guides/using-git-with-pycharm.md'
