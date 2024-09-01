@@ -817,8 +817,7 @@ codes_countries = {'US': 'United States', 'IN': 'India'}
 ```
 
 ## Summary
-This concludes a rather broad survey of basic Python types. Each of these types 
-receives detailed coverage in later chapters.
+This concludes a rather broad survey of basic Python types. 
 
 ## Related Links
 - [Official Documentation - Built-in Types](https://docs.python.org/3/library/stdtypes.html)
