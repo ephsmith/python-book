@@ -24,6 +24,7 @@ nav:
           - 'List Essentials': '04/04-lists.md'
     - 'References and Guides':
       - 'GitHub': 'guides/github-references.md'
+      - 'Using git in PyCharm': 'guides/using-git-with-pycharm.md'
       - 'Pytest': 'guides/pytest-reference.md'
       - 'Rules and Conventions for Names': 'guides/python-naming-rules-conventions.md'
       - 'Style Guidelines': 'guides/style-guidelines.md'
