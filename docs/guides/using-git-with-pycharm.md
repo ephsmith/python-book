@@ -37,4 +37,15 @@ The official `git` package requires that you install a package manager.  Homebre
 
 ### Using git in PyCharm
 - refer to [PyCharm's Documentation](https://www.jetbrains.com/help/pycharm/set-up-a-git-repository.html#clone-repo)
-- Note that you may need to restart PyCharm to get it to recognize your new `git` installation. 
+- Note that you may need to restart PyCharm to get it to recognize your new `git` installation.
+
+!!! note
+    Private repositories require that you authenticate in order to clone a repository.
+
+### Authentication For GitHub Repos
+Private GitHub repositories require that you authenticate with GitHub prior to cloning 
+or pushing on a repository. 
+
+JetBrains has put together a [guide on GitHub](https://www.jetbrains.
+com/help/pycharm/github.html#register-existing-account). **Choose the "Log in via 
+GitHub" option.**
