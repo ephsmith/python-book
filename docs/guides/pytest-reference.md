@@ -17,6 +17,11 @@ txt` file within your assignment repository.
     list of package names along with a minimum (or specific) required version. The 
     Python package installer `pip` provides a way to easily install these packages.
 
+!!! tip
+    If you are using Pytest within PyCharm, you can skip the commandline.  PyCharm 
+    provides GUI elements to run and view results of tests.
+    **Right-click on the `tests` directory and choose "Run Tests in tests".**
+
 If you would like to install `pytest` in your main Python installation, you can run 
 the following at the command prompt:
 
