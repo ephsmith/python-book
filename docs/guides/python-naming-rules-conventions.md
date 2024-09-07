@@ -12,10 +12,13 @@ means that `height` and `Height` are different names in Python.
   different variables)
 
 ## Where do name rules apply?
-Name rules apply to all source code and the names of Python files and any directories 
-used in a Python source tree. When Python modules are imported, they become names that 
-are available to our code.  Given this, it makes sense that file and directory names 
-in Python source trees must also follow naming rules.
+Name rules apply to:
+
+- all source code
+- the names of Python files
+- the names of any directories used in a Python source tree.
+
+When Python modules are imported, they become names that are available to our code.  Given this, it makes sense that file and directory names in Python source trees must also follow naming rules.
 
 ## PEP8 Conventions for Names
 Generally speaking, a convention is a widely accepted way of doing things. The same is 
@@ -35,11 +38,18 @@ These are part of the PEP8 style guide. Examples are listed below.
 ## Other Python Naming Conventions
 
 ### Names with Leading Underscores
-Names with leading underscores are considered by convention to be *private* and only 
-to be referenced or called (if functions) from the module in which they are defined.  
+Names with leading underscores are considered by **convention** to be *private* and only 
+to be referenced or called from the module in which they are defined.  
 This is not enforced by Python itself, but is often enforced by code checkers in 
 modern CI/CD pipelines. Code completion features in many IDEs and the Python shell 
-itself do not auto-complete names that begin with an underscore. 
+itself do not auto-complete names that begin with an underscore.
+
+```py title="leading_underscores.py"
+def _convert_to_dollar_str(float_value):
+    '''_convert_to_dollar_str is a private function used only in the 
+    module it is defined in.'''
+    return f'$ {float_value:0.2f}'
+```
 
 Third-party developers often use such names to discourage end users of the library 
 from referencing variables or calling functions that were not meant to be called 
