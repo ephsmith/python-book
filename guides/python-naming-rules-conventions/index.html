@@ -406,10 +406,13 @@ means that <code>height</code> and <code>Height</code> are different names in Py
   different variables)</li>
 </ul>
 <h2 id="where-do-name-rules-apply">Where do name rules apply?<a class="headerlink" href="#where-do-name-rules-apply" title="Permanent link">¶</a></h2>
-<p>Name rules apply to all source code and the names of Python files and any directories 
-used in a Python source tree. When Python modules are imported, they become names that 
-are available to our code.  Given this, it makes sense that file and directory names 
-in Python source trees must also follow naming rules.</p>
+<p>Name rules apply to:</p>
+<ul>
+<li>all source code</li>
+<li>the names of Python files</li>
+<li>the names of any directories used in a Python source tree.</li>
+</ul>
+<p>When Python modules are imported, they become names that are available to our code.  Given this, it makes sense that file and directory names in Python source trees must also follow naming rules.</p>
 <h2 id="pep8-conventions-for-names"><abbr title="The primary focus of PEP 8 is to improve the readability and consistency of Python code.">PEP8</abbr> Conventions for Names<a class="headerlink" href="#pep8-conventions-for-names" title="Permanent link">¶</a></h2>
 <p>Generally speaking, a convention is a widely accepted way of doing things. The same is 
 true for naming conventions. These are <em>not</em> language rules. While they can be broken 
@@ -449,11 +452,16 @@ These are part of the <abbr title="The primary focus of PEP 8 is to improve the 
 </table>
 <h2 id="other-python-naming-conventions">Other Python Naming Conventions<a class="headerlink" href="#other-python-naming-conventions" title="Permanent link">¶</a></h2>
 <h3 id="names-with-leading-underscores">Names with Leading Underscores<a class="headerlink" href="#names-with-leading-underscores" title="Permanent link">¶</a></h3>
-<p>Names with leading underscores are considered by convention to be <em>private</em> and only 
-to be referenced or called (if functions) from the module in which they are defined.<br/>
+<p>Names with leading underscores are considered by <strong>convention</strong> to be <em>private</em> and only 
+to be referenced or called from the module in which they are defined.<br/>
 This is not enforced by Python itself, but is often enforced by code checkers in 
 modern CI/CD pipelines. Code completion features in many IDEs and the Python shell 
-itself do not auto-complete names that begin with an underscore. </p>
+itself do not auto-complete names that begin with an underscore.</p>
+<div class="highlight"><span class="filename">leading_underscores.py</span><pre><span></span><code><span class="k">def</span> <span class="nf">_convert_to_dollar_str</span><span class="p">(</span><span class="n">float_value</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">'''_convert_to_dollar_str is a private function used only in the </span>
+<span class="sd">    module it is defined in.'''</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">'$ </span><span class="si">{</span><span class="n">float_value</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">'</span>
+</code></pre></div>
 <p>Third-party developers often use such names to discourage end users of the library 
 from referencing variables or calling functions that were not meant to be called 
 directly. Calling <code>dir()</code>. </p>
@@ -510,7 +518,7 @@ and is therefore a constant if used in a program. </p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 7, 2024</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2022</span>

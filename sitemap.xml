@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ephsmith.github.io/python-book/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/about/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/01/01-why-python/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/02/02-basic-types/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/02/02-essential-built-ins/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/02/02-handling-errors/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/02/02-python-typing/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/02/02-setting-up-python/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/03/03-long-strings/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/03/03-strings/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/04/04-lists/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/guides/github-references/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/guides/pytest-reference/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/guides/python-naming-rules-conventions/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/guides/style-guidelines/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ephsmith.github.io/python-book/guides/using-git-with-pycharm/</loc>
-         <lastmod>2024-09-01</lastmod>
+         <lastmod>2024-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
